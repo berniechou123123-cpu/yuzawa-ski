@@ -68,8 +68,9 @@
       ]
     },
     "rental": {
-      "provider": "新雪具店",
-      "providerNameConfirmed": false,
+      "provider": "Boo Sports",
+      "providerJa": "ブースポーツ",
+      "providerNameConfirmed": true,
       "currency": "JPY",
       "pricesFormat": "[1日, 2日, 續借1日]",
       "adult": {
@@ -163,7 +164,8 @@
         "租借時需要護照或在留卡等證明文件影本",
         "租借期間變更項目（例如 ski 改 snowboard）每人收 ¥2,000"
       ],
-      "shuttle": "待向店家確認（岩原及其他雪場）",
+      "shuttle": "網路資料寫有接送到岩原等約 8 個雪場，多數雪場要 2 套以上成人租借（3 人符合）；預約時再確認",
+      "location": "越後湯澤站西口步行約 5–8 分",
       "priceList": "images/new-shop-rental-prices.jpg"
     }
   },

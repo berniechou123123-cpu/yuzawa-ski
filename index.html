@@ -546,6 +546,7 @@ table.cmp tr.text td.v { font-family: var(--ff-body); text-align: left; white-sp
 .contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; font-size: .9rem; }
 .contact dt { color: var(--gold); font-size: .68rem; letter-spacing: .2em; padding-top: 4px; font-family: var(--ff-num); font-weight: 500; }
 .contact dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.contact h3 .ja { font-family: var(--ff-body); font-weight: 400; font-size: .78rem; letter-spacing: .08em; color: var(--slate); }
 .copy { font: inherit; font-size: .68rem; letter-spacing: .1em; margin-left: 8px; padding: 2px 9px; border: 1px solid var(--rule); background: transparent; color: var(--slate); cursor: pointer; vertical-align: 1px; transition: color .2s, border-color .2s; }
 .copy:hover { color: var(--ink); border-color: var(--gold); }
 .sources { margin: 36px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: .86rem; font-weight: 300; }
@@ -737,7 +738,7 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Overview</span>
       <h2>行程概要</h2>
-      <p>選定方案二：2 人上瘋雪中文單板課 2 天，3 人都向新雪具店租單板全套 4 天。</p>
+      <p>選定方案二：2 人上瘋雪中文單板課 2 天，3 人都向 Boo Sports 租單板全套 4 天。</p>
     </div>
     <div class="strip-wrap">
       <div class="strip"><a href="#days" class="" aria-label="1 月 11 日（一）出發"><span class="dow">一</span><span class="d">11</span><span class="w">出發</span></a><a href="#days" class="" aria-label="1 月 12 日（二）東京"><span class="dow">二</span><span class="d">12</span><span class="w">東京</span></a><a href="#days" class="" aria-label="1 月 13 日（三）移動"><span class="dow">三</span><span class="d">13</span><span class="w">移動</span></a><a href="#days" class="lesson" aria-label="1 月 14 日（四）上課"><span class="dow">四</span><span class="d">14</span><span class="w">上課</span></a><a href="#days" class="lesson" aria-label="1 月 15 日（五）上課"><span class="dow">五</span><span class="d">15</span><span class="w">上課</span></a><a href="#days" class="ski we" aria-label="1 月 16 日（六）滑雪"><span class="dow">六</span><span class="d">16</span><span class="w">滑雪</span></a><a href="#days" class="ski we" aria-label="1 月 17 日（日）滑雪"><span class="dow">日</span><span class="d">17</span><span class="w">滑雪</span></a><a href="#days" class="" aria-label="1 月 18 日（一）回家"><span class="dow">一</span><span class="d">18</span><span class="w">回家</span></a></div>
@@ -758,8 +759,8 @@ main section.pre { transform: translateY(26px); }
       <div class="tile wide">
         <div class="ico"><svg><use href="#i-gear"/></svg></div>
         <div class="lab">雪具</div>
-        <div class="val">新雪具店・單板全套 4 天</div>
-        <div class="sub">3 人份，1/14–17 用同一套；接駁和店名待確認</div>
+        <div class="val">Boo Sports・單板全套 4 天</div>
+        <div class="sub">3 人份，1/14–17 用同一套；岩原等雪場接送預約時再確認</div>
       </div>
       <div class="tile">
         <div class="ico"><svg><use href="#i-ticket"/></svg></div>
@@ -870,7 +871,7 @@ main section.pre { transform: translateY(26px); }
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-ski"/></svg></span>
           <h3>其他雪場滑雪，晚上前往機場</h3>
-          <p>新雪具店要在 <span class="num" data-text="chosenPlan.rental.returnBy"></span> 前歸還，所以這天要早點收板，還完再搭新幹線回東京，前往機場的東橫 INN。</p>
+          <p>Boo Sports 要在 <span class="num" data-text="chosenPlan.rental.returnBy"></span> 前歸還，所以這天要早點收板，還完再搭新幹線回東京，前往機場的東橫 INN。</p>
           <div class="tags"><span class="tag">神立 <span class="num" data-jpy="liftTicketsJpyPerDay.kandatsu"></span></span><span class="tag">岩原 <span class="num" data-jpy="liftTicketsJpyPerDay.iwappara"></span></span><span class="tag">17:00 前還雪具</span></div>
         </div>
       </li>
@@ -999,7 +1000,7 @@ main section.pre { transform: translateY(26px); }
       <div class="l"><span id="saveLbl">上課 2 人共省約</span> <span class="num" id="saveTwd2"></span></div>
     </div>
     <ul class="notes">
-      <li>新雪具店單板全套（板、鞋、雪衣褲）加安全帽、雪鏡、手套，4 天 <span class="num" id="cmpRentJpy"></span>；<span id="oldRentCmp"></span>自備雪鏡和手套還能再省。</li>
+      <li>Boo Sports 單板全套（板、鞋、雪衣褲）加安全帽、雪鏡、手套，4 天 <span class="num" id="cmpRentJpy"></span>；<span id="oldRentCmp"></span>自備雪鏡和手套還能再省。</li>
       <li>長條長度代表總額，兩個方案用同一個比例尺。</li>
     </ul>
 
@@ -1008,14 +1009,14 @@ main section.pre { transform: translateY(26px); }
       <p class="cap" id="cmpCap"></p>
       <div class="table-wrap">
         <table class="cmp">
-          <thead><tr><th>項目</th><th class="amt">方案一・全包教練</th><th class="amt p2">方案二・瘋雪＋新雪具店</th><th class="amt">方案二省</th></tr></thead>
+          <thead><tr><th>項目</th><th class="amt">方案一・全包教練</th><th class="amt p2">方案二・瘋雪＋Boo Sports</th><th class="amt">方案二省</th></tr></thead>
           <tbody id="cmpBody"></tbody>
         </table>
       </div>
     </div>
 
     <div class="detail" id="gear">
-      <h3>新雪具店・單板方案比較</h3>
+      <h3>Boo Sports・單板方案比較</h3>
       <p class="cap" id="gearCap"></p>
       <div class="table-wrap">
         <table class="cmp gear">
@@ -1057,7 +1058,7 @@ main section.pre { transform: translateY(26px); }
       <li><label><input type="checkbox" id="t-flight"><span>訂機票（3 人）：1/11 下午出發、1/18 回台灣</span></label></li>
       <li><label><input type="checkbox" id="t-confirm"><span>向瘋雪確認 <span class="num" data-twd="chosenPlan.coach.bundleTwdPerPerson"></span> 組合價是每人還是 2 人合計，以及岩原以外的雪場是否加收場地費</span></label></li>
       <li><label><input type="checkbox" id="t-coach"><span>預約瘋雪單板課：1/14–15，2 人班（LINE @crazyforsnow）</span></label></li>
-      <li><label><input type="checkbox" id="t-rental"><span>預約新雪具店 1/14–17 單板全套 3 人份；問清楚岩原和其他雪場的接送、能不能接送到 Angel Resort Yuzawa、能不能 1/13 晚上取件（記得帶護照）</span></label></li>
+      <li><label><input type="checkbox" id="t-rental"><span>預約 Boo Sports 1/14–17 單板全套 3 人份；問清楚岩原和其他雪場的接送、能不能接送到 Angel Resort Yuzawa、能不能 1/13 晚上取件（記得帶護照）</span></label></li>
       <li><label><input type="checkbox" id="t-tokyo"><span>訂淺草東橫 INN：1/11–12，2 晚</span></label></li>
       <li><label><input type="checkbox" id="t-hotel"><span>訂 Angel Resort Yuzawa：1/13–16，4 晚（Booking.com 連結在「聯絡資訊」）</span></label></li>
       <li><label><input type="checkbox" id="t-airport"><span>訂機場東橫 INN：1/17，1 晚（確認回程是成田還是羽田，訂對分店）</span></label></li>
@@ -1091,8 +1092,9 @@ main section.pre { transform: translateY(26px); }
         </dl>
       </div>
       <div class="contact">
-        <h3>新雪具店 <span class="badge">店名待確認</span></h3>
+        <h3>Boo Sports <span class="ja" data-text="chosenPlan.rental.providerJa"></span></h3>
         <dl>
+          <dt>位置</dt><dd data-text="chosenPlan.rental.location"></dd>
           <dt>歸還</dt><dd>當天 <span class="num" data-text="chosenPlan.rental.returnBy"></span> 前</dd>
           <dt>接駁</dt><dd data-text="chosenPlan.rental.shuttle"></dd>
           <dt>證件</dt><dd>租借時要護照或在留卡影本</dd>
@@ -1121,7 +1123,7 @@ main section.pre { transform: translateY(26px); }
     <details class="imgs" id="imgDetails">
       <summary>5 張店家價目表</summary>
       <div class="gallery">
-        <button type="button" data-full="images/new-shop-rental-prices.jpg" data-cap="新雪具店 租借價目表"><img loading="lazy" src="images/new-shop-rental-prices-thumb.jpg" alt="新雪具店租借價目表"><span>新雪具店・租借價目</span></button>
+        <button type="button" data-full="images/new-shop-rental-prices.jpg" data-cap="Boo Sports 租借價目表"><img loading="lazy" src="images/new-shop-rental-prices-thumb.jpg" alt="Boo Sports 租借價目表"><span>Boo Sports・租借價目</span></button>
         <button type="button" data-full="images/plan1-allinclusive-coach-prices.jpg" data-cap="方案一：全包式滑雪套裝教練價格"><img loading="lazy" src="images/plan1-allinclusive-coach-prices-thumb.jpg" alt="方案一全包式教練價目表"><span>方案一・全包教練價格</span></button>
         <button type="button" data-full="images/plan1-allinclusive-gear-list.jpg" data-cap="方案一：全包裝備內容"><img loading="lazy" src="images/plan1-allinclusive-gear-list-thumb.jpg" alt="方案一全包裝備清單"><span>方案一・裝備內容</span></button>
         <button type="button" data-full="images/snow-rental-shop-price-list.jpg" data-cap="SNOW RENTAL SHOP 租借價目表"><img loading="lazy" src="images/snow-rental-shop-price-list-thumb.jpg" alt="SNOW RENTAL SHOP 價目表"><span>SNOW RENTAL SHOP</span></button>
@@ -1366,7 +1368,7 @@ main section.pre { transform: translateY(26px); }
     const trainTwd = r10(trainJpy / rate);
     const trainNote = (s.train === "reserved" ? "指定席 " : "自由席 ") + jpy(trainOneWay) + " × 2 ＝ " + jpy(trainJpy);
     const rentNote = "單板全套 " + jpy(baseJpy) + " ＋ " + keptAcc.map((k) => fs.accessories[k]).join("、") + " " + jpy(keptAcc.length * accEach) + " ＝ " + jpy(rentJpy) + (s.selfBring ? "（雪鏡手套自備）" : "");
-    const liftName = "1/16–17 雪票", rentName = rent.provider + "單板全套 " + days + " 天", trainName = "東京－越後湯澤新幹線來回";
+    const liftName = "1/16–17 雪票", rentName = rent.provider + " 單板全套 " + days + " 天", trainName = "東京－越後湯澤新幹線來回";
 
     const learner = [
       { name: "瘋雪教練課 2 天＋雪票 2 天", note: "組合價（假設為每人價，待確認）", twd: coach.bundleTwdPerPerson },
@@ -1507,7 +1509,7 @@ main section.pre { transform: translateY(26px); }
 
       grp("合計");
       row("", "上課 " + lp + " 人", "每人小計 × " + lp, twd(d.p1Learner * lp), "", twd(d.p2Learner * lp), "", (d.p1Learner - d.p2Learner) * lp);
-      if (ot) row("", "不上課 " + ot + " 人", "1/14–15 自己滑岩原，兩個方案都租新雪具店全套", twd(d.other * ot), "", twd(d.other * ot), "", 0);
+      if (ot) row("", "不上課 " + ot + " 人", "1/14–15 自己滑岩原，兩個方案都租 " + P.chosenPlan.rental.provider + " 全套", twd(d.other * ot), "", twd(d.other * ot), "", 0);
       const g1 = d.p1Learner * lp + d.other * ot, g2 = d.p2Learner * lp + d.other * ot;
       row("grand", r.people + " 人合計", "", twd(g1), "", twd(g2), "", g1 - g2);
     }
@@ -1516,7 +1518,7 @@ main section.pre { transform: translateY(26px); }
       const R = P.chosenPlan.rental, A = R.adult, fs = R.fullSet, days = r.days;
       const tier = (arr, d) => (d <= 1 ? arr[0] : arr[1] + (d - 2) * arr[2]);
       const acc = tier(A[fs.accessoryPrice], days) * Object.keys(fs.accessories).length;
-      $("gearCap").textContent = R.provider + "（店名待確認），1/14–17 連租 " + days + " 天。每個方案都另加安全帽、雪鏡、手套 " + jpy(acc) + "；雪鏡手套自備可再省 " + jpy(r.selfSaveJpy) + "。台幣用 1 TWD = " + s.rate + " JPY 換算。歸還時間 " + R.returnBy + " 前。";
+      $("gearCap").textContent = R.provider + (R.providerNameConfirmed ? "，" : "（店名待確認），") + "1/14–17 連租 " + days + " 天。每個方案都另加安全帽、雪鏡、手套 " + jpy(acc) + "；雪鏡手套自備可再省 " + jpy(r.selfSaveJpy) + "。台幣用 1 TWD = " + s.rate + " JPY 換算。歸還時間 " + R.returnBy + " 前。";
       const mk = (cls, label, sub, cells) => {
         const tr = document.createElement("tr"); if (cls) tr.className = cls;
         const t = document.createElement("td"); t.className = "t"; t.textContent = label;
