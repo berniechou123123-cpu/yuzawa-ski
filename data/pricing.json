@@ -3,6 +3,32 @@
     "asOf": "2026-10",
     "note": "價格以店家公告為準",
     "defaultJpyPerTwd": 5,
+    "liveRate": {
+      "note": "打開網頁時抓當天台幣兌日圓的國際匯率（1 TWD 換多少 JPY），依序試下列來源；都失敗就用 cacheDays 天內上次抓到的，再不行用 defaultJpyPerTwd",
+      "decimals": 2,
+      "cacheDays": 7,
+      "timeoutMs": 6000,
+      "sanityRange": [
+        2,
+        10
+      ],
+      "sources": [
+        {
+          "name": "ExchangeRate-API",
+          "url": "https://open.er-api.com/v6/latest/TWD",
+          "ratePath": "rates.JPY",
+          "timePath": "time_last_update_unix",
+          "link": "https://www.exchangerate-api.com"
+        },
+        {
+          "name": "Currency API",
+          "url": "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/twd.json",
+          "ratePath": "twd.jpy",
+          "timePath": "date",
+          "link": "https://github.com/fawazahmed0/exchange-api"
+        }
+      ]
+    },
     "people": 3,
     "lessonPeople": 2,
     "skiDays": 4,

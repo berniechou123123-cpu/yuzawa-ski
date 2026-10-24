@@ -413,6 +413,10 @@ main section.pre .sec-head::before { transform: scaleX(0); }
 .rate input { width: 76px; font: inherit; font-family: var(--ff-num); text-align: right; padding: 6px 10px; border: 1px solid var(--rule); border-radius: 0; background: var(--snow); color: var(--ink); }
 .linkbtn { font: inherit; font-size: .8rem; letter-spacing: .04em; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 0; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 4px; }
 .linkbtn:hover { color: var(--gold); }
+.live-tag { display: inline-flex; align-items: center; gap: 6px; margin-left: 10px; font-size: .64rem; font-weight: 500; letter-spacing: .2em; color: var(--spruce); vertical-align: 2px; }
+.live-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: pulse 2.2s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .25; } }
+#rateNote a { color: inherit; }
 .excl { margin-top: 18px; font-size: .82rem; color: var(--slate); font-weight: 300; }
 
 /* ---------- Compare ---------- */
@@ -951,9 +955,9 @@ main section.pre { transform: translateY(26px); }
           <div class="d" id="trNote"></div>
         </div>
         <div class="opt">
-          <label class="t" for="rate">匯率</label>
+          <label class="t" for="rate">匯率<span class="live-tag" id="rateLive" hidden>今日</span></label>
           <span class="rate">1 TWD = <input id="rate" type="number" inputmode="decimal" min="1" max="10" step="0.01"> JPY</span>
-          <div class="d"><button type="button" class="linkbtn" id="rateReset">恢復預設匯率</button></div>
+          <div class="d"><span id="rateNote">正在抓今日匯率…</span> <button type="button" class="linkbtn" id="rateReset" hidden>恢復預設匯率</button></div>
         </div>
       </div>
     </div>
@@ -995,7 +999,7 @@ main section.pre { transform: translateY(26px); }
       <div class="l"><span id="saveLbl">上課 2 人共省約</span> <span class="num" id="saveTwd2"></span></div>
     </div>
     <ul class="notes">
-      <li>新雪具店單板全套（板、鞋、雪衣褲）加安全帽、雪鏡、手套，4 天 <span class="num" id="cmpRentJpy"></span>；比原本的雪物嚴選（約 NT$7,760）便宜。自備雪鏡和手套還能再省。</li>
+      <li>新雪具店單板全套（板、鞋、雪衣褲）加安全帽、雪鏡、手套，4 天 <span class="num" id="cmpRentJpy"></span>；<span id="oldRentCmp"></span>自備雪鏡和手套還能再省。</li>
       <li>長條長度代表總額，兩個方案用同一個比例尺。</li>
     </ul>
 
@@ -1136,7 +1140,7 @@ main section.pre { transform: translateY(26px); }
     <span class="kick">ECHIGO-YUZAWA · NIIGATA · JAPAN</span>
     <span class="sign">Yuzawa, January 2027</span>
     <p class="bye">一路順風，雪地見。</p>
-    <p>價格以店家公告為準。所有價格為 <span id="asOf">2026 年 10 月</span>查詢，匯率以 1 台幣 ≈ <span id="footRate">5</span> 日圓估算。</p>
+    <p>價格以店家公告為準。所有價格為 <span id="asOf">2026 年 10 月</span>查詢，匯率以 1 台幣 ≈ <span id="footRate">5</span> 日圓估算<span id="footRateSrc"></span>。</p>
     <p id="excludesFoot"></p>
   </div>
 </footer>
@@ -1416,6 +1420,22 @@ main section.pre { transform: translateY(26px); }
     const def = { selfBring: false, day3: "kandatsu", day4: "kandatsu", train: "nonReserved", rate: P.meta.defaultJpyPerTwd, view: "per" };
     const s = Object.assign({}, def, store.get(CALC_KEY, {}) || {});
     if (!(s.rate > 0)) s.rate = def.rate;
+    if (s.rateMode !== "manual") s.rateMode = "live";
+
+    /* Live exchange rate: today's TWD→JPY from the sources in pricing.json; falls back to the last good one, then the default. */
+    const LR = P.meta.liveRate || null;
+    const RATE_KEY = "yuzawa-rate-v1";
+    const live = { rate: null, at: null, src: null, link: null, status: LR ? "loading" : "off" };
+    const roundRate = (v) => { const k = Math.pow(10, LR && LR.decimals != null ? LR.decimals : 2); return Math.round(v * k) / k; };
+    const md = (d) => (d.getMonth() + 1) + "/" + d.getDate();
+    const saneRate = (v) => { const rg = (LR && LR.sanityRange) || [0, Infinity]; return v > rg[0] && v < rg[1]; };
+    if (LR) {
+      const c = store.get(RATE_KEY, null);
+      if (c && saneRate(c.rate) && Date.now() - c.fetched < (LR.cacheDays || 7) * 86400000) {
+        Object.assign(live, { rate: c.rate, at: new Date(c.at), src: c.src, link: c.link, status: "cached" });
+      }
+    }
+    if (s.rateMode === "live") s.rate = live.rate || def.rate;
 
     document.querySelectorAll("[data-jpy]").forEach((el) => (el.textContent = jpy(get(P, el.dataset.jpy))));
     document.querySelectorAll("[data-twd]").forEach((el) => (el.textContent = twd(get(P, el.dataset.twd))));
@@ -1573,6 +1593,7 @@ main section.pre { transform: translateY(26px); }
       $("hdrBudget").textContent = fmt(r100(r.views.per.total));
       $("passRate").textContent = "1 TWD = " + s.rate + " JPY";
       $("footRate").textContent = s.rate;
+      renderRate();
       $("compoHead").textContent = "費用組成・" + who;
 
       const stack = $("stack"), legend = $("legend");
@@ -1603,6 +1624,8 @@ main section.pre { transform: translateY(26px); }
       $("p2Coach").textContent = twd(r.p2.coach) + "（待確認）";
       $("p2Rental").textContent = r.rent.provider + " " + r.days + " 天 " + jpy(r.p2.rentJpy) + " ≈ " + twd(r.p2.rent);
       $("cmpRentJpy").textContent = jpy(r.p2.rentJpy) + "（約 " + twd(r.p2.rent) + "）";
+      const old = P.previousRental, oldTwd = old.fullSetPerDayTwd.rent3PlusDays * r.days;
+      $("oldRentCmp").textContent = "比原本的" + old.provider + "（約 " + twd(oldTwd) + "）" + (r.p2.rent <= oldTwd ? "便宜" : "貴") + "。";
       $("p2Lift").textContent = jpy(r.p2.liftJpy) + " ≈ " + twd(r.p2.lift);
       const save = r.p1.total - r.p2.total;
       tween($("saveTwd"), r100(save), fmt);
@@ -1623,10 +1646,66 @@ main section.pre { transform: translateY(26px); }
     $("viewPer").addEventListener("click", () => { s.view = "per"; render(); });
     $("viewFree").addEventListener("click", () => { s.view = "free"; render(); });
     $("viewAll").addEventListener("click", () => { s.view = "all"; render(); });
-    $("rate").addEventListener("input", (e) => { const v = parseFloat(e.target.value); if (v > 0) { s.rate = v; render(); } });
+    $("rate").addEventListener("input", (e) => { const v = parseFloat(e.target.value); if (v > 0) { s.rate = v; s.rateMode = "manual"; render(); } });
     $("rate").addEventListener("blur", () => { $("rate").value = s.rate; });
-    $("rateReset").addEventListener("click", () => { s.rate = def.rate; $("rate").value = s.rate; render(); });
+    $("rateReset").addEventListener("click", () => { s.rateMode = "live"; s.rate = live.rate || def.rate; $("rate").value = s.rate; render(); });
+
+    function renderRate() {
+      const note = $("rateNote"), btn = $("rateReset"), using = s.rateMode === "live";
+      const haveLive = live.status === "live" || live.status === "cached";
+      $("rateLive").hidden = !(using && live.status === "live");
+      note.textContent = "";
+      const add = (t) => note.appendChild(document.createTextNode(t));
+      const srcLink = () => {
+        const a = document.createElement("a"); a.href = live.link; a.target = "_blank"; a.rel = "noopener"; a.textContent = live.src; note.appendChild(a);
+      };
+      if (!using) {
+        add("你手動改成 " + s.rate + "。" + (haveLive ? "今日匯率是 " + live.rate + "。" : ""));
+      } else if (live.status === "loading") {
+        add("正在抓今日匯率，先用 " + s.rate + "…");
+      } else if (live.status === "live") {
+        add(md(live.at) + " 更新的國際匯率，來源 "); srcLink(); add("。實際在銀行或機場換日圓會再少一點。");
+      } else if (live.status === "cached") {
+        add("抓不到最新匯率，先用 " + md(live.at) + " 的匯率（來源 "); srcLink(); add("）。");
+      } else if (live.status === "failed") {
+        add("抓不到今日匯率，先用預設 1 TWD = " + def.rate + " JPY。");
+      }
+      const target = haveLive ? live.rate : def.rate;
+      btn.textContent = haveLive ? "改用今日匯率" : "恢復預設匯率";
+      btn.hidden = using && s.rate === target;
+      $("footRateSrc").textContent = using && haveLive ? "（" + md(live.at) + " 國際匯率）" : using ? "（預設值）" : "（手動設定）";
+    }
+
+    async function fetchLiveRate() {
+      for (const src of LR.sources) {
+        const ctrl = "AbortController" in window ? new AbortController() : null;
+        const timer = ctrl ? setTimeout(() => ctrl.abort(), LR.timeoutMs || 6000) : 0;
+        try {
+          const res = await fetch(src.url, { cache: "no-store", signal: ctrl ? ctrl.signal : undefined });
+          if (!res.ok) continue;
+          const d = await res.json();
+          const v = Number(get(d, src.ratePath));
+          if (!saneRate(v)) continue;
+          const tv = get(d, src.timePath);
+          let at = typeof tv === "number" ? new Date(tv * 1000) : new Date(tv);
+          if (isNaN(at)) at = new Date();
+          return { rate: roundRate(v), at, src: src.name, link: src.link };
+        } catch (e) { /* try the next source */ } finally { clearTimeout(timer); }
+      }
+      return null;
+    }
+
     render();
+    if (LR && LR.sources && LR.sources.length) {
+      fetchLiveRate().then((L) => {
+        if (L) {
+          Object.assign(live, L, { status: "live" });
+          store.set(RATE_KEY, { rate: L.rate, at: L.at.getTime(), src: L.src, link: L.link, fetched: Date.now() });
+        } else if (live.status !== "cached") live.status = "failed";
+        if (s.rateMode === "live") s.rate = live.rate || def.rate;
+        render();
+      });
+    }
   }
 
   fetch("data/pricing.json", { cache: "no-cache" })
