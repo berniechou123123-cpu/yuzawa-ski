@@ -308,6 +308,20 @@
       "note": "使用者 2026-10-24 提供：四人房 ¥16,800，3 人分"
     }
   },
+  "estimates": {
+    "internet": {
+      "twdPerPerson": 700,
+      "days": 8,
+      "note": "docomo 8 天吃到飽 eSIM，momo 原價 NT$699、特價 NT$609（2026-10 查）",
+      "source": "https://www.momoshop.com.tw/product/13618310"
+    },
+    "insurance": {
+      "twdPerPerson": 2000,
+      "days": 8,
+      "note": "7 天旅平險＋不便險約 NT$1,000–1,900；很多旅平險不保滑雪，要看條款或加購滑雪活動險",
+      "source": "https://roo.cash/blog/?p=98983"
+    }
+  },
   "budgetPerPersonTwd": {
     "note": "上課者每人，16–17 日神立、自由席、匯率 1:5",
     "coachBundle": 16600,
@@ -317,8 +331,7 @@
     "total": 27350,
     "excludes": [
       "餐飲",
-      "東京市區與機場交通",
-      "旅平險"
+      "東京市區與機場交通"
     ]
   },
   "comparisonPerPersonTwd": {

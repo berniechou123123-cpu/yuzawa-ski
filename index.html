@@ -45,6 +45,8 @@
   --c4: #b4ada0;
   --c5: #8b6a86;
   --c6: #a39a5a;
+  --c7: #4f7f86;
+  --c8: #5b5f8a;
   /* night hero (same in both themes) */
   --sky-1: #0b0f17;
   --sky-2: #1a2131;
@@ -76,7 +78,7 @@
     --snow: #0f1011; --paper: #151618; --frost: #1e1f22; --ink: #ece7dd; --slate: #9d988e; --rule: #2c2d30; --line: #ece7dd;
     --spruce: #a6c4b2; --spruce-soft: #19231f; --on-spruce: #0e1411; --deep: #1a201e; --on-deep: #efe9de; --deep-dim: #9f9b93;
     --pend: #e3a679; --pend-bg: #2a1e16; --pend-line: #87573a; --ok: #9cc9a6; --ok-bg: #1a281e;
-    --c1: #a6c4b2; --c2: #8ea6c6; --c3: #d6a874; --c4: #6b6862; --c5: #c49bbd; --c6: #c9bd7a;
+    --c1: #a6c4b2; --c2: #8ea6c6; --c3: #d6a874; --c4: #6b6862; --c5: #c49bbd; --c6: #c9bd7a; --c7: #8fc0c6; --c8: #a3a8d6;
     --drift: #17181a; --gold: #d3b67b; --gold-soft: #26211a; color-scheme: dark;
   }
 }
@@ -84,7 +86,7 @@
   --snow: #0f1011; --paper: #151618; --frost: #1e1f22; --ink: #ece7dd; --slate: #9d988e; --rule: #2c2d30; --line: #ece7dd;
   --spruce: #a6c4b2; --spruce-soft: #19231f; --on-spruce: #0e1411; --deep: #1a201e; --on-deep: #efe9de; --deep-dim: #9f9b93;
   --pend: #e3a679; --pend-bg: #2a1e16; --pend-line: #87573a; --ok: #9cc9a6; --ok-bg: #1a281e;
-  --c1: #a6c4b2; --c2: #8ea6c6; --c3: #d6a874; --c4: #6b6862; --c5: #c49bbd; --c6: #c9bd7a;
+  --c1: #a6c4b2; --c2: #8ea6c6; --c3: #d6a874; --c4: #6b6862; --c5: #c49bbd; --c6: #c9bd7a; --c7: #8fc0c6; --c8: #a3a8d6;
   --drift: #17181a; --gold: #d3b67b; --gold-soft: #26211a; color-scheme: dark;
 }
 
@@ -908,7 +910,7 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Budget</span>
       <h2>預算計算機</h2>
-      <p>3 人裡 2 人上教練課，所以分成「上課」和「不上課」各算一份，也可以看 3 人合計。機票和 7 晚住宿已經算進去。切換選項總額會即時更新，日圓項目依匯率換算成台幣、取到十位數。</p>
+      <p>3 人裡 2 人上教練課，所以分成「上課」和「不上課」各算一份，也可以看 3 人合計。機票、7 晚住宿，還有網路和旅平險的預估都已經算進去。切換選項總額會即時更新，日圓項目依匯率換算成台幣、取到十位數。</p>
     </div>
     <div class="budget-grid">
       <div>
@@ -1089,7 +1091,8 @@ main section.pre { transform: translateY(26px); }
       <li><label><input type="checkbox" id="t-tokyo"><span>訂淺草東橫 INN：2/11–12，2 晚（每人 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span>）</span></label></li>
       <li><label><input type="checkbox" id="t-hotel"><span>訂 Angel Resort Yuzawa：2/13–16，4 晚三人房 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span>（Booking.com 連結在「聯絡資訊」）</span></label></li>
       <li><label><input type="checkbox" id="t-airport"><span>訂成田機場東橫 INN：2/17，1 晚四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span>（隔天 09:10 從成田起飛）</span></label></li>
-      <li><label><input type="checkbox" id="t-ins"><span>買涵蓋 2/11–18、包含滑雪的旅平險</span></label></li>
+      <li><label><input type="checkbox" id="t-ins"><span>買涵蓋 2/11–18 的旅平險（預估每人 <span class="num" data-twd="estimates.insurance.twdPerPerson"></span>）：很多旅平險不保滑雪，要看條款有沒有寫，沒有就加購滑雪活動險</span></label></li>
+      <li><label><input type="checkbox" id="t-net"><span>買日本 8 天吃到飽 eSIM（預估每人 <span class="num" data-twd="estimates.internet.twdPerPerson"></span>，手機要支援 eSIM，不支援就買實體 SIM 卡）</span></label></li>
       <li><label><input type="checkbox" id="t-gear"><span>在台灣買雪鏡和手套（每人可省 <span class="num" id="selfSaveTodo"></span>）</span></label></li>
       <li><label><input type="checkbox" id="t-lift"><span>網路購買 2/16–17 雪票（3 人），以及第 3 人 2/14–15 的岩原雪票</span></label></li>
       <li><label><input type="checkbox" id="t-train"><span>買新幹線：2/13 東京 → 越後湯澤、2/17 越後湯澤 → 東京</span></label></li>
@@ -1143,6 +1146,8 @@ main section.pre { transform: translateY(26px); }
       <li>Crazy Snow 瘋雪 越後湯澤價目表：<a href="https://tokyo.crazyforsnow.com/price" target="_blank" rel="noopener">tokyo.crazyforsnow.com/price</a></li>
       <li>Crazy Snow 新手問與答（接駁巴士資訊）：<a href="https://tokyo.crazyforsnow.com/新手問與答" target="_blank" rel="noopener">tokyo.crazyforsnow.com/新手問與答</a></li>
       <li>雪板地圖：越後湯澤租雪具懶人包：<a href="https://snowboardmap.com/guidance/yuzawa-ski-rental/" target="_blank" rel="noopener">snowboardmap.com</a></li>
+      <li>日本 8 天吃到飽 eSIM（網路預估）：<a href="https://www.momoshop.com.tw/product/13618310" target="_blank" rel="noopener">momoshop.com.tw</a></li>
+      <li>日本旅平險保費比較（保險預估）：<a href="https://roo.cash/blog/?p=98983" target="_blank" rel="noopener">roo.cash</a></li>
       <li>東京－越後湯澤新幹線票價：<a href="https://jr-shinkansen.net/articles/tokyo-echigoyuzawa" target="_blank" rel="noopener">jr-shinkansen.net</a></li>
       <li>SnowSenpai 雪長姐（曾比較的另一家教練）：<a href="https://www.snowsenpai.com/" target="_blank" rel="noopener">snowsenpai.com</a></li>
       <li>方案一（全包教練）與 SNOW RENTAL SHOP 的價格來自下方價目表原圖。<a href="sources.md" target="_blank" rel="noopener">sources.md 原始檔</a></li>
@@ -1372,7 +1377,7 @@ main section.pre { transform: translateY(26px); }
 
   /* ---------- Pricing ---------- */
   const CALC_KEY = "yuzawa-calc-v2";
-  const COLORS = ["var(--c1)", "var(--c2)", "var(--c3)", "var(--c4)", "var(--c5)", "var(--c6)"];
+  const COLORS = ["var(--c1)", "var(--c2)", "var(--c3)", "var(--c4)", "var(--c5)", "var(--c6)", "var(--c7)", "var(--c8)"];
 
   function compute(P, s) {
     const m = P.meta, coach = P.chosenPlan.coach, rent = P.chosenPlan.rental;
@@ -1411,19 +1416,22 @@ main section.pre { transform: translateY(26px); }
     const hotelAllJpy = ak.perPersonJpy * people + ho.totalJpy + Math.round(na.totalJpy / na.splitPeople * people);
     const flightItem = { name: "機票 " + fl.outbound.no + "／" + fl.inbound.no, note: fl.people + " 人 " + twd(fl.totalTwd) + " ÷ " + fl.people, allNote: "票價 " + twd(fl.fareTwd) + "＋稅金附加費 " + twd(fl.taxTwd), twd: flightPer };
     const hotelItem = { name: "住宿 " + nights + " 晚", note: "淺草 " + jpy(ak.perPersonJpy) + "＋Angel Resort " + jpy(Math.round(ho.totalJpy / people)) + "＋成田 " + jpy(Math.round(na.totalJpy / na.splitPeople)) + " ＝ " + jpy(hotelPerJpy), allNote: "淺草 " + jpy(ak.perPersonJpy) + " × " + people + "＋Angel Resort " + ho.room + " " + jpy(ho.totalJpy) + "＋成田" + na.room + " " + jpy(na.totalJpy) + " ＝ " + jpy(hotelAllJpy), twd: hotelTwd };
+    const E = P.estimates;
+    const netItem = { name: "網路吃到飽 " + E.internet.days + " 天（預估）", note: "docomo eSIM，原價約 NT$699，特價 NT$609", twd: E.internet.twdPerPerson };
+    const insItem = { name: "旅平險 " + E.insurance.days + " 天（預估）", note: "要確認有保滑雪，7 天方案約 NT$1,000–1,900", twd: E.insurance.twdPerPerson };
     const learner = [
       { name: "瘋雪教練課 2 天＋雪票 2 天", note: "組合價（假設為每人價，待確認）", twd: coach.bundleTwdPerPerson },
       { name: rentName, note: rentNote, twd: rentTwd },
       { name: liftName, note: freeLiftNote, twd: freeLiftTwd },
       { name: trainName, note: trainNote, twd: trainTwd },
-      flightItem, hotelItem
+      flightItem, hotelItem, netItem, insItem
     ];
     const other = [
       { name: "2/14–15 雪票（自己滑岩原）", note: "岩原 " + jpy(lifts.iwappara) + " × " + lessonDays + " ＝ " + jpy(lessonLiftJpy), twd: lessonLiftTwd },
       { name: rentName, note: rentNote, twd: rentTwd },
       { name: liftName, note: freeLiftNote, twd: freeLiftTwd },
       { name: trainName, note: trainNote, twd: trainTwd },
-      flightItem, hotelItem
+      flightItem, hotelItem, netItem, insItem
     ];
     const all = learner.map((it, i) => ({
       name: i === 0 ? "教練組合價＋2/14–15 雪票" : it.name,
