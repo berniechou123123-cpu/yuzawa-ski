@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "asOf": "2026-10",
+    "note": "價格以店家公告為準",
+    "defaultJpyPerTwd": 5,
+    "people": 3,
+    "lessonPeople": 2,
+    "skiDays": 4,
+    "lessonDays": 2
+  },
+  "chosenPlan": {
+    "name": "方案二",
+    "coach": {
+      "provider": "Crazy Snow 瘋雪",
+      "bundleTwdPerPerson": 16600,
+      "bundleIncludes": "2 天全日教練課 + 2 天岩原雪票",
+      "bundlePerPersonConfirmed": false,
+      "regularClassPriceTwd": {
+        "fullDay": {
+          "1": 13500,
+          "2": 15000,
+          "3": 16500,
+          "4": 18000,
+          "5": 19500,
+          "6": 21000
+        },
+        "halfDay": {
+          "1": 9000,
+          "2": 10000,
+          "3": 11000,
+          "4": 12000,
+          "5": 13000,
+          "6": 14000
+        }
+      },
+      "regularPriceIsPer": "class",
+      "notes": [
+        "表列價適用岩原，其他雪場可能加場地費",
+        "全日含午休約 1 小時，實際教學約 5 小時",
+        "旺季不開半日課",
+        "指定教練 +¥5,000/日；指定二級教練 +¥10,000/日"
+      ]
+    },
+    "rental": {
+      "provider": "新雪具店",
+      "providerNameConfirmed": false,
+      "currency": "JPY",
+      "pricesFormat": "[1日, 2日, 續借1日]",
+      "adult": {
+        "snowboardSet": [
+          4000,
+          7000,
+          3000
+        ],
+        "snowboardFullSet": [
+          6000,
+          10500,
+          4500
+        ],
+        "board": [
+          3000,
+          5000,
+          2500
+        ],
+        "boots": [
+          2500,
+          4500,
+          2000
+        ],
+        "jacketPants": [
+          3000,
+          5000,
+          2000
+        ],
+        "jacketOrPants": [
+          2000,
+          3500,
+          1500
+        ],
+        "helmetOrGogglesOrGloves": [
+          1000,
+          1500,
+          500
+        ],
+        "polesOrSnowBootsOrBeanie": [
+          500,
+          800,
+          300
+        ],
+        "burtonSnowboardSet": [
+          4500,
+          8000,
+          3500
+        ],
+        "burtonSnowboardSetWithWear": [
+          6500,
+          11500,
+          5000
+        ],
+        "burtonBoard": [
+          3500,
+          6000,
+          2500
+        ],
+        "premiumSnowboardSet": [
+          5000,
+          9000,
+          4000
+        ],
+        "premiumSnowboardSetWithWear": [
+          7000,
+          12500,
+          5500
+        ],
+        "premiumBoard": [
+          4000,
+          7000,
+          3000
+        ]
+      },
+      "fullSet": {
+        "base": "snowboardFullSet",
+        "baseIncludes": "雪板＋雪鞋＋雪衣＋雪褲",
+        "accessoryPrice": "helmetOrGogglesOrGloves",
+        "accessories": {
+          "helmet": "安全帽",
+          "goggles": "雪鏡",
+          "gloves": "手套"
+        },
+        "selfBringable": [
+          "goggles",
+          "gloves"
+        ]
+      },
+      "returnBy": "17:00",
+      "notes": [
+        "租借時需要護照或在留卡等證明文件影本",
+        "租借期間變更項目（例如 ski 改 snowboard）每人收 ¥2,000"
+      ],
+      "shuttle": "待向店家確認（岩原及其他雪場）",
+      "priceList": "images/new-shop-rental-prices.jpg"
+    }
+  },
+  "alternativePlan": {
+    "name": "方案一（全包教練）",
+    "currency": "JPY",
+    "pricePerPersonPerDayByClassSize": {
+      "1": 95000,
+      "2": 55000,
+      "3": 43000,
+      "4": 35000,
+      "5": 34000,
+      "6": 30000
+    },
+    "includes": [
+      "活動保險",
+      "私人包班課程",
+      "雪場接駁服務",
+      "單/雙板全套滑雪裝備"
+    ],
+    "lessonHours": "9:00–15:00，中午休息 1 小時",
+    "extensionRentalPerPersonPerDay": 8600,
+    "extras": {
+      "extraHourTotal": 15000,
+      "coachTravelFeePerDay": 10000,
+      "childDiscountPerPerson": 3500
+    },
+    "partnerRentalShop": "SNOW RENTAL SHOP"
+  },
+  "snowRentalShop": {
+    "currency": "JPY",
+    "adult": {
+      "fullSet": {
+        "1day": 12700,
+        "2days": 21800,
+        "extraDay": 8600
+      },
+      "boardSet": {
+        "1day": 4100,
+        "2days": 7600,
+        "extraDay": 3100
+      },
+      "items": {
+        "jacketPants": [
+          3600,
+          6100,
+          2600
+        ],
+        "goggles": [
+          1400,
+          2100,
+          800
+        ],
+        "gloves": [
+          1100,
+          2100,
+          800
+        ],
+        "helmet": [
+          1400,
+          2100,
+          800
+        ],
+        "padShorts": [
+          1400,
+          2100,
+          800
+        ],
+        "boardWithPoles": [
+          2600,
+          5100,
+          2100
+        ],
+        "boots": [
+          2600,
+          5100,
+          2100
+        ],
+        "poles": [
+          1100,
+          1600,
+          600
+        ]
+      },
+      "itemsFormat": "[1日, 2日, 第2日後每日加收]"
+    }
+  },
+  "liftTicketsJpyPerDay": {
+    "iwappara": 5000,
+    "kandatsu": 7000
+  },
+  "shinkansenTokyoEchigoYuzawaOneWayJpy": {
+    "nonReserved": 6370,
+    "reserved": 6900
+  },
+  "budgetPerPersonTwd": {
+    "note": "上課者每人，16–17 日神立、自由席、匯率 1:5",
+    "coachBundle": 16600,
+    "rental4Days": 5400,
+    "liftTicketsDay3to4": 2800,
+    "shinkansenRoundTrip": 2550,
+    "total": 27350,
+    "excludes": [
+      "機票",
+      "住宿",
+      "餐飲",
+      "旅平險"
+    ]
+  },
+  "comparisonPerPersonTwd": {
+    "note": "上課者每人，後 2 天岩原，不含交通",
+    "plan1": {
+      "coachAndLessonTickets": 24000,
+      "rental": 3440,
+      "liftTicketsDay3to4": 2000,
+      "total": 29440
+    },
+    "plan2": {
+      "coachAndLessonTickets": 16600,
+      "rental": 5400,
+      "liftTicketsDay3to4": 2000,
+      "total": 24000
+    },
+    "savingsPerPerson": 5440
+  },
+  "previousRental": {
+    "provider": "雪物嚴選",
+    "currency": "TWD",
+    "adultPerDay": {
+      "single": {
+        "boardBootsJacketPants": 1560,
+        "boardBoots": 950,
+        "jacketPants": 760,
+        "board": 640,
+        "boots": 640,
+        "jacket": 540,
+        "pants": 540,
+        "helmet": 280,
+        "goggles": 280,
+        "gloves": 190,
+        "padShorts": 280,
+        "kneePads": 310,
+        "boardBag": 440
+      },
+      "rent2Days": {
+        "boardBootsJacketPants": 1425,
+        "boardBoots": 855,
+        "jacketPants": 700,
+        "board": 590,
+        "boots": 590,
+        "jacket": 485,
+        "pants": 485,
+        "helmet": 235,
+        "goggles": 235,
+        "gloves": 140,
+        "padShorts": 235,
+        "kneePads": 260,
+        "boardBag": 440
+      },
+      "rent3PlusDays": {
+        "boardBootsJacketPants": 1280,
+        "boardBoots": 760,
+        "jacketPants": 640,
+        "board": 540,
+        "boots": 540,
+        "jacket": 440,
+        "pants": 440,
+        "helmet": 190,
+        "goggles": 190,
+        "gloves": 90,
+        "padShorts": 190,
+        "kneePads": 230,
+        "boardBag": 440
+      }
+    },
+    "fullSetItems": [
+      "boardBootsJacketPants",
+      "helmet",
+      "goggles",
+      "gloves",
+      "padShorts"
+    ],
+    "fullSetPerDayTwd": {
+      "single": 2590,
+      "rent2Days": 2270,
+      "rent3PlusDays": 1940
+    },
+    "selfBringSavingsPerDayTwd": {
+      "goggles": 190,
+      "gloves": 90
+    },
+    "shuttle": "每人每日消費滿 NT$700 可預約免費雪場／旅館接駁",
+    "hours": "07:30–19:00",
+    "season": "2026-12-15 ~ 2027-03-21"
+  }
+}
