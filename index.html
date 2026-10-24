@@ -1627,7 +1627,12 @@ main section.pre { transform: translateY(26px); }
       $("p2Rental").textContent = r.rent.provider + " " + r.days + " 天 " + jpy(r.p2.rentJpy) + " ≈ " + twd(r.p2.rent);
       $("cmpRentJpy").textContent = jpy(r.p2.rentJpy) + "（約 " + twd(r.p2.rent) + "）";
       const old = P.previousRental, oldTwd = old.fullSetPerDayTwd.rent3PlusDays * r.days;
-      $("oldRentCmp").textContent = "比原本的" + old.provider + "（約 " + twd(oldTwd) + "）" + (r.p2.rent <= oldTwd ? "便宜" : "貴") + "。";
+      const SR = P.snowRentalShop.adult, srTier = (arr, d) => (d <= 1 ? arr[0] : arr[1] + (d - 2) * arr[2]);
+      const srJpy = srTier([SR.boardSet["1day"], SR.boardSet["2days"], SR.boardSet.extraDay], r.days)
+        + ["jacketPants", "helmet", "goggles", "gloves"].reduce((t, k) => t + srTier(SR.items[k], r.days), 0);
+      const srTwd = r10(srJpy / s.rate);
+      $("oldRentCmp").textContent = "比原本的" + old.provider + "（約 " + twd(oldTwd) + "）" + (r.p2.rent <= oldTwd ? "便宜" : "貴")
+        + "，也比 SNOW RENTAL SHOP 同樣品項 " + jpy(srJpy) + "（約 " + twd(srTwd) + "）" + (r.p2.rentJpy <= srJpy ? "便宜" : "貴") + "。";
       $("p2Lift").textContent = jpy(r.p2.liftJpy) + " ≈ " + twd(r.p2.lift);
       const save = r.p1.total - r.p2.total;
       tween($("saveTwd"), r100(save), fmt);
