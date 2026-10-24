@@ -802,7 +802,7 @@ main section.pre { transform: translateY(26px); }
         <div class="ico"><svg><use href="#i-bed"/></svg></div>
         <div class="lab">住宿</div>
         <div class="val">東橫 INN＋Angel Resort Yuzawa</div>
-        <div class="sub">淺草東橫 INN 2 晚・Angel Resort Yuzawa 4 晚（三人房 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span>）・成田機場東橫 INN 1 晚</div>
+        <div class="sub">淺草東橫 INN 2 晚（每人 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span>）・Angel Resort Yuzawa 4 晚（三人房 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span>）・成田機場東橫 INN 1 晚（四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span>）</div>
       </div>
       <div class="tile full-sm">
         <div class="ico"><svg><use href="#i-board"/></svg></div>
@@ -827,7 +827,7 @@ main section.pre { transform: translateY(26px); }
           <h3>出發，晚上抵達東京</h3>
           <p>搭日本航空 JL8664，13:30 從桃園起飛，17:35 到成田，再搭電車到淺草（約 1 小時多），入住淺草東橫 INN。</p>
           <div class="tags"><span class="tag">JL8664 桃園 13:30 → 成田 17:35</span><span class="tag">淺草</span></div>
-          <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>淺草東橫 INN</b><small>第 1／2 晚</small></div>
+          <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>淺草東橫 INN</b><small>第 1／2 晚・每人 2 晚 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span></small></div>
         </div>
       </li>
       <li class="day">
@@ -888,7 +888,7 @@ main section.pre { transform: translateY(26px); }
           <h3>其他雪場滑雪，晚上前往成田</h3>
           <p>Boo Sports 要在 <span class="num" data-text="chosenPlan.rental.returnBy"></span> 前歸還，所以這天要早點收板，還完再搭新幹線回東京，轉車到成田機場的東橫 INN，隔天一早搭機。</p>
           <div class="tags"><span class="tag">神立 <span class="num" data-jpy="liftTicketsJpyPerDay.kandatsu"></span></span><span class="tag">岩原 <span class="num" data-jpy="liftTicketsJpyPerDay.iwappara"></span></span><span class="tag">17:00 前還雪具</span></div>
-          <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>成田機場東橫 INN</b><small>1 晚・隔天 09:10 起飛</small></div>
+          <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>成田機場東橫 INN</b><small>1 晚・四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span> 三人分</small></div>
         </div>
       </li>
       <li class="day">
@@ -908,7 +908,7 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Budget</span>
       <h2>預算計算機</h2>
-      <p>3 人裡 2 人上教練課，所以分成「上課」和「不上課」各算一份，也可以看 3 人合計。機票和越後湯澤 4 晚住宿已經算進去。切換選項總額會即時更新，日圓項目依匯率換算成台幣、取到十位數。</p>
+      <p>3 人裡 2 人上教練課，所以分成「上課」和「不上課」各算一份，也可以看 3 人合計。機票和 7 晚住宿已經算進去。切換選項總額會即時更新，日圓項目依匯率換算成台幣、取到十位數。</p>
     </div>
     <div class="budget-grid">
       <div>
@@ -1086,9 +1086,9 @@ main section.pre { transform: translateY(26px); }
       <li><label><input type="checkbox" id="t-confirm"><span>向瘋雪確認 <span class="num" data-twd="chosenPlan.coach.bundleTwdPerPerson"></span> 組合價是每人還是 2 人合計，以及岩原以外的雪場是否加收場地費</span></label></li>
       <li><label><input type="checkbox" id="t-coach"><span>預約瘋雪單板課：2/14–15，2 人班（LINE @crazyforsnow）</span></label></li>
       <li><label><input type="checkbox" id="t-rental"><span>預約 Boo Sports 2/14–17 單板全套 3 人份；問清楚岩原和其他雪場的接送、能不能接送到 Angel Resort Yuzawa、能不能 2/13 晚上取件（記得帶護照）</span></label></li>
-      <li><label><input type="checkbox" id="t-tokyo"><span>訂淺草東橫 INN：2/11–12，2 晚</span></label></li>
+      <li><label><input type="checkbox" id="t-tokyo"><span>訂淺草東橫 INN：2/11–12，2 晚（每人 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span>）</span></label></li>
       <li><label><input type="checkbox" id="t-hotel"><span>訂 Angel Resort Yuzawa：2/13–16，4 晚三人房 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span>（Booking.com 連結在「聯絡資訊」）</span></label></li>
-      <li><label><input type="checkbox" id="t-airport"><span>訂成田機場東橫 INN：2/17，1 晚（隔天 09:10 從成田起飛）</span></label></li>
+      <li><label><input type="checkbox" id="t-airport"><span>訂成田機場東橫 INN：2/17，1 晚四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span>（隔天 09:10 從成田起飛）</span></label></li>
       <li><label><input type="checkbox" id="t-ins"><span>買涵蓋 2/11–18、包含滑雪的旅平險</span></label></li>
       <li><label><input type="checkbox" id="t-gear"><span>在台灣買雪鏡和手套（每人可省 <span class="num" id="selfSaveTodo"></span>）</span></label></li>
       <li><label><input type="checkbox" id="t-lift"><span>網路購買 2/16–17 雪票（3 人），以及第 3 人 2/14–15 的岩原雪票</span></label></li>
@@ -1114,9 +1114,9 @@ main section.pre { transform: translateY(26px); }
       <div class="contact">
         <h3>住宿</h3>
         <dl>
-          <dt>2/11–12</dt><dd>淺草東橫 INN（2 晚）</dd>
+          <dt>2/11–12</dt><dd>淺草東橫 INN（2 晚，每人 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span>）</dd>
           <dt>2/13–16</dt><dd>Angel Resort Yuzawa（4 晚，三人房 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span>）<br><a href="https://www.booking.com/Share-9ClAod" target="_blank" rel="noopener">Booking.com 頁面</a></dd>
-          <dt>2/17</dt><dd>成田機場東橫 INN（1 晚）</dd>
+          <dt>2/17</dt><dd>成田機場東橫 INN（1 晚，四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span>，3 人分）</dd>
         </dl>
       </div>
       <div class="contact">
@@ -1404,11 +1404,13 @@ main section.pre { transform: translateY(26px); }
     const rentNote = "單板全套 " + jpy(baseJpy) + " ＋ " + keptAcc.map((k) => fs.accessories[k]).join("、") + " " + jpy(keptAcc.length * accEach) + " ＝ " + jpy(rentJpy) + (s.selfBring ? "（雪鏡手套自備）" : "");
     const liftName = "2/16–17 雪票", rentName = rent.provider + " 單板全套 " + days + " 天", trainName = "東京－越後湯澤新幹線來回";
 
-    const fl = P.flight, ho = P.lodging.angelResort;
+    const fl = P.flight, L = P.lodging, ho = L.angelResort, ak = L.asakusa, na = L.narita;
     const flightPer = Math.round(fl.totalTwd / fl.people);
-    const hotelPerJpy = Math.round(ho.totalJpy / people), hotelTwd = r10(hotelPerJpy / rate);
+    const nights = ak.nights + ho.nights + na.nights;
+    const hotelPerJpy = Math.round(ak.perPersonJpy + ho.totalJpy / people + na.totalJpy / na.splitPeople), hotelTwd = r10(hotelPerJpy / rate);
+    const hotelAllJpy = ak.perPersonJpy * people + ho.totalJpy + Math.round(na.totalJpy / na.splitPeople * people);
     const flightItem = { name: "機票 " + fl.outbound.no + "／" + fl.inbound.no, note: fl.people + " 人 " + twd(fl.totalTwd) + " ÷ " + fl.people, allNote: "票價 " + twd(fl.fareTwd) + "＋稅金附加費 " + twd(fl.taxTwd), twd: flightPer };
-    const hotelItem = { name: ho.name + " " + ho.nights + " 晚", note: ho.room + " " + jpy(ho.totalJpy) + " ÷ " + people + " ＝ " + jpy(hotelPerJpy), allNote: ho.room + " " + ho.nights + " 晚 " + jpy(ho.totalJpy), twd: hotelTwd };
+    const hotelItem = { name: "住宿 " + nights + " 晚", note: "淺草 " + jpy(ak.perPersonJpy) + "＋Angel Resort " + jpy(Math.round(ho.totalJpy / people)) + "＋成田 " + jpy(Math.round(na.totalJpy / na.splitPeople)) + " ＝ " + jpy(hotelPerJpy), allNote: "淺草 " + jpy(ak.perPersonJpy) + " × " + people + "＋Angel Resort " + ho.room + " " + jpy(ho.totalJpy) + "＋成田" + na.room + " " + jpy(na.totalJpy) + " ＝ " + jpy(hotelAllJpy), twd: hotelTwd };
     const learner = [
       { name: "瘋雪教練課 2 天＋雪票 2 天", note: "組合價（假設為每人價，待確認）", twd: coach.bundleTwdPerPerson },
       { name: rentName, note: rentNote, twd: rentTwd },

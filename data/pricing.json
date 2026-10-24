@@ -286,12 +286,26 @@
     }
   },
   "lodging": {
+    "asakusa": {
+      "name": "淺草東橫 INN",
+      "nights": 2,
+      "perPersonJpy": 18600,
+      "note": "使用者 2026-10-24 提供：每人 2 晚 ¥18,600"
+    },
     "angelResort": {
       "name": "Angel Resort Yuzawa",
       "nights": 4,
       "room": "三人房",
       "totalJpy": 178367,
       "note": "使用者 2026-10-24 提供 178367，沒寫幣別，假設是日圓"
+    },
+    "narita": {
+      "name": "成田機場東橫 INN",
+      "nights": 1,
+      "room": "四人房",
+      "totalJpy": 16800,
+      "splitPeople": 3,
+      "note": "使用者 2026-10-24 提供：四人房 ¥16,800，3 人分"
     }
   },
   "budgetPerPersonTwd": {
@@ -302,7 +316,6 @@
     "shinkansenRoundTrip": 2550,
     "total": 27350,
     "excludes": [
-      "淺草和成田的東橫 INN",
       "餐飲",
       "東京市區與機場交通",
       "旅平險"
