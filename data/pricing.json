@@ -261,6 +261,39 @@
     "nonReserved": 6370,
     "reserved": 6900
   },
+  "flight": {
+    "airline": "日本航空 JAL",
+    "cabin": "經濟艙 Economy Standard",
+    "people": 3,
+    "fareTwd": 24000,
+    "taxTwd": 20895,
+    "totalTwd": 44895,
+    "outbound": {
+      "date": "2027-02-11",
+      "no": "JL8664",
+      "from": "台灣桃園",
+      "dep": "13:30",
+      "to": "成田",
+      "arr": "17:35"
+    },
+    "inbound": {
+      "date": "2027-02-18",
+      "no": "JL8663",
+      "from": "成田",
+      "dep": "09:10",
+      "to": "台灣桃園",
+      "arr": "12:15"
+    }
+  },
+  "lodging": {
+    "angelResort": {
+      "name": "Angel Resort Yuzawa",
+      "nights": 4,
+      "room": "三人房",
+      "totalJpy": 178367,
+      "note": "使用者 2026-10-24 提供 178367，沒寫幣別，假設是日圓"
+    }
+  },
   "budgetPerPersonTwd": {
     "note": "上課者每人，16–17 日神立、自由席、匯率 1:5",
     "coachBundle": 16600,
@@ -269,9 +302,9 @@
     "shinkansenRoundTrip": 2550,
     "total": 27350,
     "excludes": [
-      "機票",
-      "住宿",
+      "淺草和成田的東橫 INN",
       "餐飲",
+      "東京市區與機場交通",
       "旅平險"
     ]
   },
