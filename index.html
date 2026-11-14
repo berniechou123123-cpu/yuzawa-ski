@@ -681,6 +681,7 @@ table.cmp tr.text td.v { font-family: var(--ff-body); text-align: left; white-sp
 .pill { font: inherit; font-size: .84rem; letter-spacing: .1em; display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; background: var(--ink); color: var(--snow); border: 1px solid var(--ink); cursor: pointer; transition: background .25s, color .25s; }
 .pill svg { width: 16px; height: 16px; }
 .pill:hover { background: transparent; color: var(--ink); }
+a.pill { text-decoration: none; }
 .pill:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .place-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); column-gap: 32px; border-top: 1px solid var(--line); }
 .place-list a { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
@@ -1669,6 +1670,11 @@ main section.pre { transform: translateY(26px); }
   /* ---------- Calendar (.ics) ---------- */
   (function calendar() {
     const btn = $("icsBtn"); if (!btn) return;
+    let framed = false; try { framed = window.self !== window.top; } catch (e) { framed = true; }
+    if (framed && !/github\.io$/.test(location.hostname)) {
+      const link = document.createElement("a"); link.className = "pill"; link.href = "https://berniechou123123-cpu.github.io/yuzawa-ski/#contact"; link.target = "_blank"; link.rel = "noopener";
+      link.textContent = "到公開版加入行事曆"; btn.replaceWith(link); return;
+    }
     const esc = (t) => String(t).replace(/[\;,]/g, (c) => "\\" + c).replace(/\n/g, "\\n");
     const ev = [
       { s: "20270211T053000Z", e: "20270211T083500Z", t: "✈ JL8664 桃園 → 成田", l: "台灣桃園國際機場", d: "13:30 起飛（台灣時間），17:35 抵達成田（日本時間）。起飛前 2 小時到機場。" },
