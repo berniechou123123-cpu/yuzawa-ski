@@ -361,6 +361,9 @@ main section.pre .sec-head::before { transform: scaleX(0); }
 .wx a { color: var(--on-deep); }
 .wx-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 18px 28px; }
 .wx h3 { font-family: var(--ff-display); font-weight: 500; font-size: 1.4rem; letter-spacing: .1em; }
+.wx-g { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 9px 16px; font-size: .8rem; letter-spacing: .12em; text-decoration: none; border: 1px solid color-mix(in srgb, var(--glow) 60%, transparent); color: var(--glow) !important; transition: background .25s, color .25s; }
+.wx-g::after { content: "↗"; }
+.wx-g:hover { background: var(--glow); color: var(--deep) !important; }
 .wx-sub { margin-top: 6px; font-size: .8rem; color: var(--deep-dim); font-weight: 300; }
 .wx-now { display: flex; align-items: center; gap: 14px; }
 .wx-now svg { width: 38px; height: 38px; color: var(--glow); }
@@ -1003,6 +1006,7 @@ main section.pre { transform: translateY(26px); }
         <div>
           <h3>越後湯澤・未來 7 天</h3>
           <p class="wx-sub" id="wxSub">正在抓天氣預報…</p>
+          <a class="wx-g" href="https://www.google.com/search?q=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%20%E5%A4%A9%E6%B0%97&amp;hl=zh-TW" target="_blank" rel="noopener">Google 天氣預報</a>
         </div>
         <div class="wx-now" id="wxNow" hidden>
           <svg aria-hidden="true"><use id="wxNowIco" href="#w-sun"/></svg>
@@ -1663,7 +1667,7 @@ main section.pre { transform: translateY(26px); }
     }).catch(() => {
       clearTimeout(timer);
       if (cached && cached.data) { draw(cached.data, cached.at, true); return; }
-      $("wxSub").textContent = "天氣預報暫時抓不到。可以點上面岩原、神立的「雪況」連結看雪場現況。";
+      $("wxSub").textContent = "這裡暫時抓不到預報，可以點下面的 Google 天氣預報，或上面岩原、神立的「雪況」連結。";
     });
   })();
 
