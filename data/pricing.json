@@ -262,6 +262,11 @@
       "days": 8,
       "note": "7 天旅平險＋不便險約 NT$1,000–1,900；很多旅平險不保滑雪，要看條款或加購滑雪活動險",
       "source": "https://roo.cash/blog/?p=98983"
+    },
+    "meals": {
+      "jpyPerDay": 5000,
+      "days": 7,
+      "note": "每人每天約 ¥5,000：早餐便利商店 ¥500–800、雪場午餐約 ¥1,500–2,500、晚餐 ¥1,500–3,000；飯店若含早餐會再少"
     }
   },
   "budgetPerPersonTwd": {
@@ -272,8 +277,8 @@
     "shinkansenRoundTrip": 2550,
     "total": 27350,
     "excludes": [
-      "餐飲",
-      "東京市區與機場交通"
+      "東京市區的地鐵與公車",
+      "伴手禮"
     ]
   },
   "comparisonPerPersonTwd": {
@@ -463,5 +468,14 @@
     "location": "越後湯澤站西口步行約 5–8 分",
     "priceList": "images/new-shop-rental-prices.jpg",
     "note": "2026-11-14 前的方案二雪具店，現在只用來比價"
+  },
+  "transport": {
+    "naritaToAsakusaJpy": 1290,
+    "uenoToNaritaSkylinerJpy": 2580,
+    "notes": [
+      "2/11 成田機場→淺草：京成アクセス特急（成田スカイアクセス線），約 1 小時，車票 ¥1,290（IC ¥1,276），京成官網 2026-11 查",
+      "2/17 上野→成田機場：京成 Skyliner，¥2,580（車資 ¥1,280＋特急券 ¥1,300），約 45 分",
+      "東橫 INN 成田空港有免費接駁車，從成田機場約 15 分鐘"
+    ]
   }
 }

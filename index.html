@@ -396,6 +396,23 @@ main section.pre .sec-head::before { transform: scaleX(0); }
   .wx-days::-webkit-scrollbar { display: none; }
 }
 
+.eat-head { display: grid; gap: 10px; }
+.eat h3, .pack h3 { font-family: var(--ff-display); font-weight: 600; font-size: 1.4rem; letter-spacing: .06em; }
+.eat-head p { color: var(--slate); font-size: .92rem; font-weight: 300; line-height: 1.85; max-width: 44em; }
+.eat-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); column-gap: 36px; border-top: 1px solid var(--line); }
+.eat-list a { display: grid; grid-template-columns: 1fr auto; gap: 3px 12px; padding: 16px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.eat-list a::after { content: "↗"; grid-column: 2; grid-row: 1 / span 3; align-self: center; color: var(--gold); }
+.eat-list b { font-family: var(--ff-display); font-weight: 600; font-size: 1.02rem; letter-spacing: .04em; color: var(--ink); }
+.eat-list .where { font-size: .7rem; letter-spacing: .14em; color: var(--gold); }
+.eat-list .what { font-size: .86rem; color: var(--slate); font-weight: 300; }
+.eat .fine { margin-top: 12px; font-size: .76rem; color: var(--slate); font-weight: 300; }
+.pack { margin-top: 64px; }
+.pack-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.pack-head .num { font-size: .86rem; color: var(--gold); letter-spacing: .08em; }
+.pack-list { border-top: 0; }
+.pack-list li.grp { padding: 18px 24px 8px; font-size: .7rem; letter-spacing: .28em; color: var(--gold); border-bottom: 0; background: var(--snow); }
+.pack-list label { padding-block: 12px; font-size: .92rem; }
+@media (max-width: 520px) { .pack-list label { padding-inline: 16px; } .pack-list li.grp { padding-inline: 16px; } }
 .days { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--rule); }
 .day { display: grid; grid-template-columns: 116px 1fr; gap: 28px; position: relative; padding: 28px 0 32px; border-top: 1px solid var(--rule); }
 .day:first-child { border-top: 0; padding-top: 4px; }
@@ -697,6 +714,14 @@ a.pill { text-decoration: none; }
 .place-list a:hover::after { transform: translate(2px, -2px); }
 .place-list b { font-weight: 500; font-size: .95rem; color: var(--ink); }
 .place-list span { font-size: .76rem; color: var(--slate); font-weight: 300; }
+.sos { border: 1px solid var(--pend-line); background: var(--pend-bg); padding: 22px 24px 20px; margin-bottom: 40px; }
+.sos h3 { font-size: .74rem; font-weight: 600; letter-spacing: .3em; color: var(--pend); }
+.sos ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 14px 24px; }
+.sos a { text-decoration: none; display: grid; gap: 2px; }
+.sos b { font-family: var(--ff-serif); font-weight: 600; font-size: 1.6rem; line-height: 1.1; color: var(--ink); font-variant-numeric: lining-nums; letter-spacing: .01em; }
+.sos li:nth-child(n+3) b { font-family: var(--ff-num); font-weight: 500; font-size: 1.05rem; padding-top: 6px; }
+.sos span { font-size: .78rem; color: var(--slate); line-height: 1.6; }
+.sos p { margin-top: 14px; font-size: .82rem; color: var(--slate); font-weight: 300; line-height: 1.75; }
 .sources { margin: 36px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: .86rem; font-weight: 300; }
 .sources li { overflow-wrap: anywhere; }
 .sources .h { font-family: var(--ff-num); font-size: .66rem; font-weight: 500; letter-spacing: .3em; color: var(--slate); margin-bottom: 4px; }
@@ -857,6 +882,7 @@ main section.pre { transform: translateY(26px); }
     <a href="#route">路線雪場</a>
     <a href="#days">每日行程</a>
     <a href="#budget">預算</a>
+    <a href="#guide">吃與帶</a>
     <a href="#todo">待辦</a>
     <a href="#contact">聯絡</a>
     <a href="#prices">價目表</a>
@@ -961,16 +987,16 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Route</span>
       <h2>路線與雪場</h2>
-      <p>從桃園到成田、淺草，再搭上越新幹線進雪國。四天滑雪住在 Angel Resort Yuzawa，前兩天在岩原上課，後兩天去神立。</p>
+      <p>從桃園到成田、淺草，再從上野搭上越新幹線進雪國。四天滑雪住在 Angel Resort Yuzawa，前兩天在岩原上課，後兩天去神立。</p>
     </div>
 
     <ol class="journey" aria-label="整趟路線">
       <li><time>2/11</time><b>台灣桃園</b><span>JL8664 13:30 起飛</span></li>
-      <li><time>2/11</time><b>成田機場</b><span>17:35 抵達，電車約 1 小時多到淺草</span></li>
+      <li><time>2/11</time><b>成田機場</b><span>17:35 抵達，京成アクセス特急約 1 小時到淺草</span></li>
       <li><time>2/11–12</time><b>淺草</b><span>東橫 INN 2 晚</span></li>
-      <li class="rail"><time>2/13</time><b>東京站</b><span>上越新幹線直達越後湯澤</span></li>
+      <li class="rail"><time>2/13</time><b>上野站</b><span>上越新幹線直達越後湯澤</span></li>
       <li class="snow"><time>2/13–17</time><b>越後湯澤</b><span>Angel Resort Yuzawa 4 晚，岩原、神立</span></li>
-      <li class="rail"><time>2/17</time><b>成田機場</b><span>新幹線回東京再轉車，東橫 INN 1 晚</span></li>
+      <li class="rail"><time>2/17</time><b>成田機場</b><span>新幹線到上野轉 Skyliner，東橫 INN 1 晚</span></li>
       <li><time>2/18</time><b>台灣桃園</b><span>JL8663 09:10 起飛，12:15 抵達</span></li>
     </ol>
 
@@ -1039,8 +1065,8 @@ main section.pre { transform: translateY(26px); }
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
           <h3>出發，晚上抵達東京</h3>
-          <p>搭日本航空 JL8664，13:30 從桃園起飛，17:35 到成田，再搭電車到淺草（約 1 小時多），入住淺草東橫 INN。</p>
-          <ol class="tl"><li><time>11:30</time><span>桃園機場報到（起飛前 2 小時）</span></li><li class="k"><time>13:30</time><span>JL8664 起飛</span></li><li class="k"><time>17:35</time><span>抵達成田</span></li><li><time>晚上</time><span>電車到淺草，入住東橫 INN</span></li></ol>
+          <p>搭日本航空 JL8664，13:30 從桃園起飛，17:35 到成田。出關後搭京成アクセス特急到淺草，約 1 小時、¥1,290，部分班次直達淺草，其他在押上換車。</p>
+          <ol class="tl"><li><time>11:30</time><span>桃園機場報到（起飛前 2 小時）</span></li><li class="k"><time>13:30</time><span>JL8664 起飛</span></li><li class="k"><time>17:35</time><span>抵達成田</span></li><li><time>晚上</time><span>京成アクセス特急到淺草，入住東橫 INN</span></li></ol>
           <div class="tags"><span class="tag">淺草</span></div>
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>淺草東橫 INN</b><small>第 1／2 晚・每人 2 晚 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span></small></div>
         </div>
@@ -1061,7 +1087,7 @@ main section.pre { transform: translateY(26px); }
           <span class="dico" aria-hidden="true"><svg><use href="#i-train"/></svg></span>
           <h3>東京 → 越後湯澤</h3>
           <p>白天在東京，晚上搭新幹線到越後湯澤、入住 Angel Resort Yuzawa；看交通狀況，可能提早到下午出發。可以的話先到雪具店取件、試穿雪鞋（營業時間要問店家），不然就 14 日早上再取。</p>
-          <ol class="tl"><li><time>白天</time><span>東京</span></li><li class="k"><time>下午～晚上</time><span>東京站搭上越新幹線</span></li><li><time>晚上</time><span>到越後湯澤，入住 Angel Resort</span></li></ol>
+          <ol class="tl"><li><time>白天</time><span>東京</span></li><li class="k"><time>下午～晚上</time><span>上野站搭上越新幹線（淺草搭銀座線到上野約 5 分鐘）</span></li><li><time>晚上</time><span>到越後湯澤，入住 Angel Resort</span></li></ol>
           <div class="tags"><span class="tag">新幹線自由席 <span class="num" data-jpy="shinkansenTokyoEchigoYuzawaOneWayJpy.nonReserved"></span></span><span class="tag">雪具取件</span></div>
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>Angel Resort Yuzawa</b><small>第 1／4 晚・三人房 4 晚 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span></small></div>
         </div>
@@ -1102,8 +1128,8 @@ main section.pre { transform: translateY(26px); }
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-ski"/></svg></span>
           <h3>其他雪場滑雪，晚上前往成田</h3>
-          <p>雪具要在 SNOW RENTAL SHOP 規定的時間前歸還（時間待確認），所以這天要早點收板，還完再搭新幹線回東京，轉車到成田機場的東橫 INN，隔天一早搭機。</p>
-          <ol class="tl"><li><time>白天</time><span>滑雪，早點收板</span></li><li class="k"><time>待確認</time><span>SNOW RENTAL SHOP 還雪具</span></li><li><time>之後</time><span>新幹線回東京，轉車到成田</span></li><li><time>晚上</time><span>入住成田機場東橫 INN</span></li></ol>
+          <p>雪具要在 SNOW RENTAL SHOP 規定的時間前歸還（時間待確認），所以這天要早點收板，還完搭新幹線到上野，轉京成 Skyliner 到成田機場（約 45 分、¥2,580），再搭東橫 INN 的免費接駁車（約 15 分鐘）。</p>
+          <ol class="tl"><li><time>白天</time><span>滑雪，早點收板</span></li><li class="k"><time>待確認</time><span>SNOW RENTAL SHOP 還雪具</span></li><li><time>之後</time><span>新幹線到上野，轉 Skyliner 到成田機場</span></li><li><time>晚上</time><span>搭飯店免費接駁車，入住成田機場東橫 INN</span></li></ol>
           <div class="tags"><span class="tag">神立 <span class="num" data-jpy="liftTicketsJpyPerDay.kandatsu"></span></span><span class="tag">岩原 <span class="num" data-jpy="liftTicketsJpyPerDay.iwappara"></span></span><span class="tag">還雪具</span></div>
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>成田機場東橫 INN</b><small>1 晚・四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span> 三人分</small></div>
         </div>
@@ -1114,7 +1140,7 @@ main section.pre { transform: translateY(26px); }
           <span class="dico" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
           <h3>回台灣</h3>
           <p>搭日本航空 JL8663，09:10 從成田起飛，12:15 到桃園。國際線建議起飛前 2 小時到機場。</p>
-          <ol class="tl"><li><time>07:10</time><span>到成田機場（起飛前 2 小時）</span></li><li class="k"><time>09:10</time><span>JL8663 起飛</span></li><li class="k"><time>12:15</time><span>抵達桃園</span></li></ol>
+          <ol class="tl"><li><time>早上</time><span>搭飯店免費接駁車到機場（班次問櫃檯）</span></li><li><time>07:10</time><span>到成田機場（起飛前 2 小時）</span></li><li class="k"><time>09:10</time><span>JL8663 起飛</span></li><li class="k"><time>12:15</time><span>抵達桃園</span></li></ol>
           <div class="stay none"><svg aria-hidden="true"><use href="#i-plane"/></svg><span>當晚住宿</span><b>不用住宿，搭機回台灣</b></div>
         </div>
       </li>
@@ -1125,7 +1151,7 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Budget</span>
       <h2>預算計算機</h2>
-      <p>3 人裡 2 人上教練課，所以分成「上課」和「不上課」各算一份，也可以看 3 人合計。機票、7 晚住宿，還有網路和旅平險的預估都已經算進去。切換選項總額會即時更新，日圓項目依匯率換算成台幣、取到十位數。</p>
+      <p>3 人裡 2 人上教練課，所以分成「上課」和「不上課」各算一份，也可以看 3 人合計。機票、7 晚住宿、機場交通，還有餐飲、網路和旅平險的預估都已經算進去。切換選項總額會即時更新，日圓項目依匯率換算成台幣、取到十位數。</p>
     </div>
     <div class="budget-grid">
       <div>
@@ -1198,6 +1224,26 @@ main section.pre { transform: translateY(26px); }
     <p class="excl" id="excludes"></p>
   </section>
 
+  <section id="guide">
+    <div class="sec-head">
+      <span class="kicker">Field notes</span>
+      <h2>吃與帶</h2>
+      <p>越後湯澤站裡就有一整排吃的，到站、等新幹線都很方便。打包清單勾選存在這支手機裡。</p>
+    </div>
+    <div class="eat">
+      <div class="eat-head">
+        <h3>越後湯澤站・CoCoLo 湯沢</h3>
+        <p>預算用每人每天 <b class="num" data-jpy="estimates.meals.jpyPerDay"></b> 估：早餐便利商店約 ¥500–800，雪場午餐約 ¥1,500–2,500，晚餐 ¥1,500–3,000。Angel Resort 如果含早餐會再少一點。</p>
+      </div>
+      <ul class="eat-list"><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AD%9A%E6%B2%BC%E3%82%89%E3%83%BC%E3%82%81%E3%82%93%E9%9B%81%E8%88%8E%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>魚沼らーめん 雁舎</b><span class="where">站內がんぎどおり</span><span class="what">米粉麵辛味噌拉麵 ¥880</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%AF%BF%E3%81%97%E6%9C%AC%E9%99%A3%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>越後の味蔵 寿し 本陣 DINING</b><span class="where">站內がんぎどおり・迴轉壽司</span><span class="what">海鮮丼 ¥1,760、蟹肉豪快盛 ¥1,430</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B6%8A%E5%BE%8C%E3%81%A4%E3%81%91%E9%BA%BA%E7%B6%AD%E6%96%B0%20%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>越後つけ麺 維新</b><span class="where">站內がんぎどおり</span><span class="what">辣味沾麵 約 ¥1,080</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%BD%E3%82%93%E3%81%97%E3%82%85%E9%A4%A8%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>ぽんしゅ館 越後湯沢驛店</b><span class="where">站內</span><span class="what">日本酒試飲、現做飯糰 ¥850–920</span></a></li></ul>
+      <p class="fine">價格是 <a href="https://www.mapple.net/article/77510/" target="_blank" rel="noopener">MAPPLE 旅遊網站</a>刊載的，可能已經調整。</p>
+    </div>
+    <div class="pack">
+      <div class="pack-head"><h3>打包清單</h3><span class="num" id="packCount"></span></div>
+      <ul class="todos pack-list" id="pack"><li class="grp">證件與錢</li><li><label><input type="checkbox" id="p-pass"><span>護照（租雪具也要出示）</span></label></li><li><label><input type="checkbox" id="p-ticket"><span>機票電子收據、飯店訂房確認</span></label></li><li><label><input type="checkbox" id="p-ins"><span>旅平險保單，存好海外救援專線</span></label></li><li><label><input type="checkbox" id="p-cash"><span>日圓現金（雪場和小店不一定能刷卡）</span></label></li><li><label><input type="checkbox" id="p-card"><span>信用卡、Suica／PASMO（手機版也可以）</span></label></li><li class="grp">滑雪穿著</li><li><label><input type="checkbox" id="p-base"><span>排汗保暖內層上下 2 套（不要純棉）</span></label></li><li><label><input type="checkbox" id="p-mid"><span>刷毛或羽絨中層</span></label></li><li><label><input type="checkbox" id="p-socks"><span>滑雪長襪 2–3 雙</span></label></li><li><label><input type="checkbox" id="p-neck"><span>脖圍或面罩、薄毛帽</span></label></li><li><label><input type="checkbox" id="p-pad"><span>護臀、護膝（初學很推薦）</span></label></li><li><label><input type="checkbox" id="p-gg"><span>雪鏡、手套（如果決定自備）</span></label></li><li class="grp">電子產品</li><li><label><input type="checkbox" id="p-phone"><span>手機、充電線（日本插座跟台灣一樣，不用轉接頭）</span></label></li><li><label><input type="checkbox" id="p-bat"><span>行動電源（低溫很耗電）</span></label></li><li><label><input type="checkbox" id="p-esim"><span>eSIM 先安裝好，落地再開</span></label></li><li class="grp">其他</li><li><label><input type="checkbox" id="p-hot"><span>暖暖包</span></label></li><li><label><input type="checkbox" id="p-sun"><span>防曬乳、護唇膏、乳液（雪地紫外線強又乾）</span></label></li><li><label><input type="checkbox" id="p-med"><span>常備藥：止痛、感冒、腸胃、OK 繃</span></label></li><li><label><input type="checkbox" id="p-bag"><span>塑膠袋（裝濕的衣物）</span></label></li><li><label><input type="checkbox" id="p-towel"><span>泡湯用小毛巾</span></label></li></ul>
+    </div>
+  </section>
+
   <section id="todo">
     <div class="sec-head">
       <span class="kicker">Checklist</span>
@@ -1236,6 +1282,16 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Contacts</span>
       <h2>聯絡資訊</h2>
+    </div>
+    <div class="sos" aria-label="緊急聯絡">
+      <h3>緊急時</h3>
+      <ul>
+        <li><a href="tel:119"><b>119</b><span>救護車・火災</span></a></li>
+        <li><a href="tel:110"><b>110</b><span>警察</span></a></li>
+        <li><a href="tel:05038162787"><b>050-3816-2787</b><span>日本觀光局訪日旅客熱線，24 小時，有中文</span></a></li>
+        <li><a href="tel:+818010097179"><b>080-1009-7179</b><span>台北駐日經濟文化代表處急難救助（另一支 080-1009-7436）</span></a></li>
+      </ul>
+      <p>在雪場受傷先找滑雪場巡邏隊（Ski Patrol）或纜車站人員。看醫生前先打保單上的海外救援專線，很多保險可以直接安排醫院。</p>
     </div>
     <div class="contacts">
       <div class="contact">
@@ -1283,12 +1339,14 @@ main section.pre { transform: translateY(26px); }
       <ul class="place-list"><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E6%A8%AAINN%20%E6%B5%85%E8%8D%89" target="_blank" rel="noopener"><b>淺草東橫 INN</b><span>2/11–12</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85" target="_blank" rel="noopener"><b>越後湯澤站</b><span>2/13 新幹線到站</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A8%E3%83%B3%E3%82%B8%E3%82%A7%E3%83%AB%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>Angel Resort Yuzawa</b><span>2/13–16</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=SNOW%20RENTAL%20SHOP%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>SNOW RENTAL SHOP</b><span>Angel Resort Yuzawa 旁邊</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4" target="_blank" rel="noopener"><b>岩原スキー場</b><span>2/14–15</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E7%AB%8B%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88" target="_blank" rel="noopener"><b>神立スノーリゾート</b><span>2/16–17</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E6%A8%AAINN%20%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener"><b>成田機場東橫 INN</b><span>2/17</span></a></li></ul>
     </div>
     <ul class="sources">
-      <li class="h">資料來源（2026 年 10 月查詢）</li>
+      <li class="h">資料來源（2026 年 10–11 月查詢）</li>
       <li>Crazy Snow 瘋雪 越後湯澤價目表：<a href="https://tokyo.crazyforsnow.com/price" target="_blank" rel="noopener">tokyo.crazyforsnow.com/price</a></li>
       <li>Crazy Snow 新手問與答（接駁巴士資訊）：<a href="https://tokyo.crazyforsnow.com/新手問與答" target="_blank" rel="noopener">tokyo.crazyforsnow.com/新手問與答</a></li>
       <li>雪板地圖：越後湯澤租雪具懶人包：<a href="https://snowboardmap.com/guidance/yuzawa-ski-rental/" target="_blank" rel="noopener">snowboardmap.com</a></li>
       <li>日本 8 天吃到飽 eSIM（網路預估）：<a href="https://www.momoshop.com.tw/product/13618310" target="_blank" rel="noopener">momoshop.com.tw</a></li>
       <li>日本旅平險保費比較（保險預估）：<a href="https://roo.cash/blog/?p=98983" target="_blank" rel="noopener">roo.cash</a></li>
+      <li>京成電鐵 成田機場交通與票價：<a href="https://www.keisei.co.jp/keisei/tetudou/skyliner/jp/traffic/express_fares.php" target="_blank" rel="noopener">keisei.co.jp</a></li>
+      <li>外交部領事事務局 駐日代表處急難救助電話：<a href="https://www.boca.gov.tw/sp-foof-countrycp-01-29-77969-03-1.html" target="_blank" rel="noopener">boca.gov.tw</a></li>
       <li>東京－越後湯澤新幹線票價：<a href="https://jr-shinkansen.net/articles/tokyo-echigoyuzawa" target="_blank" rel="noopener">jr-shinkansen.net</a></li>
       <li>SNOW RENTAL SHOP 的價格來自下方價目表原圖。<a href="sources.md" target="_blank" rel="noopener">sources.md 原始檔</a></li>
     </ul>
@@ -1485,6 +1543,14 @@ main section.pre { transform: translateY(26px); }
     store.set(TODO_KEY, todoState); renderTodoProgress();
   });
   renderTodoProgress();
+
+  /* ---------- Packing list ---------- */
+  (function pack() {
+    const KEY = "yuzawa-pack-v1", boxes = Array.from(document.querySelectorAll("#pack input[type=checkbox]")), st = store.get(KEY, {}) || {};
+    const count = () => { const d = boxes.filter((b) => b.checked).length; $("packCount").textContent = d + " / " + boxes.length; };
+    boxes.forEach((b) => { b.checked = !!st[b.id]; b.addEventListener("change", () => { st[b.id] = b.checked; store.set(KEY, st); count(); }); });
+    count();
+  })();
 
   /* ---------- Copy buttons ---------- */
   document.querySelectorAll(".copy").forEach((btn) => {
@@ -1689,22 +1755,26 @@ main section.pre { transform: translateY(26px); }
     const hotelAllJpy = ak.perPersonJpy * people + ho.totalJpy + Math.round(na.totalJpy / na.splitPeople * people);
     const flightItem = { name: "機票 " + fl.outbound.no + "／" + fl.inbound.no, note: fl.people + " 人 " + twd(fl.totalTwd) + " ÷ " + fl.people, allNote: "票價 " + twd(fl.fareTwd) + "＋稅金附加費 " + twd(fl.taxTwd), twd: flightPer };
     const hotelItem = { name: "住宿 " + nights + " 晚", note: "淺草 " + jpy(ak.perPersonJpy) + "＋Angel Resort " + jpy(Math.round(ho.totalJpy / people)) + "＋成田 " + jpy(Math.round(na.totalJpy / na.splitPeople)) + " ＝ " + jpy(hotelPerJpy), allNote: "淺草 " + jpy(ak.perPersonJpy) + " × " + people + "＋Angel Resort " + ho.room + " " + jpy(ho.totalJpy) + "＋成田" + na.room + " " + jpy(na.totalJpy) + " ＝ " + jpy(hotelAllJpy), twd: hotelTwd };
-    const E = P.estimates;
+    const E = P.estimates, T = P.transport, M = E.meals;
+    const airJpy = T.naritaToAsakusaJpy + T.uenoToNaritaSkylinerJpy, mealJpy = M.jpyPerDay * M.days;
+    const moveItem = { name: "交通：新幹線＋機場來回", note: trainNote + "；成田→淺草 " + jpy(T.naritaToAsakusaJpy) + "＋上野→成田 Skyliner " + jpy(T.uenoToNaritaSkylinerJpy), twd: trainTwd + r10(airJpy / rate) };
+    const mealItem = { name: "餐飲 " + M.days + " 天（預估）", note: "每人每天約 " + jpy(M.jpyPerDay) + " × " + M.days + " ＝ " + jpy(mealJpy), twd: r10(mealJpy / rate) };
+    const netInsItem = { name: "網路＋旅平險（預估）", note: "吃到飽 eSIM 約 " + twd(E.internet.twdPerPerson) + "＋旅平險約 " + twd(E.insurance.twdPerPerson) + "（要確認有保滑雪）", twd: E.internet.twdPerPerson + E.insurance.twdPerPerson };
     const netItem = { name: "網路吃到飽 " + E.internet.days + " 天（預估）", note: "docomo eSIM，原價約 NT$699，特價 NT$609", twd: E.internet.twdPerPerson };
     const insItem = { name: "旅平險 " + E.insurance.days + " 天（預估）", note: "要確認有保滑雪，7 天方案約 NT$1,000–1,900", twd: E.insurance.twdPerPerson };
     const learner = [
       { name: "瘋雪教練課 2 天＋雪票 2 天", note: "組合價（假設為每人價，待確認）", twd: coach.bundleTwdPerPerson },
       { name: rentName, note: rentNote, twd: rentTwd },
       { name: liftName, note: freeLiftNote, twd: freeLiftTwd },
-      { name: trainName, note: trainNote, twd: trainTwd },
-      flightItem, hotelItem, netItem, insItem
+      moveItem,
+      flightItem, hotelItem, mealItem, netInsItem
     ];
     const other = [
       { name: "2/14–15 雪票（自己滑岩原）", note: "岩原 " + jpy(lifts.iwappara) + " × " + lessonDays + " ＝ " + jpy(lessonLiftJpy), twd: lessonLiftTwd },
       { name: rentName, note: rentNote, twd: rentTwd },
       { name: liftName, note: freeLiftNote, twd: freeLiftTwd },
-      { name: trainName, note: trainNote, twd: trainTwd },
-      flightItem, hotelItem, netItem, insItem
+      moveItem,
+      flightItem, hotelItem, mealItem, netInsItem
     ];
     const all = learner.map((it, i) => ({
       name: i === 0 ? "教練組合價＋2/14–15 雪票" : it.name,
