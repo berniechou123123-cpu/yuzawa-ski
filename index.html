@@ -3,12 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="越後湯澤滑雪計劃：2027 年 2/11–18，東京兩天加越後湯澤滑雪四天的行程、預算計算機、方案比較與準備清單。">
+<meta name="description" content="越後湯澤滑雪計劃：2027 年 2/11–18，東京兩天加越後湯澤滑雪四天的路線、雪場、天氣、每日行程、預算計算機與準備清單。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="越後湯澤滑雪計劃｜2/11–18">
 <meta property="og:description" content="東京兩天、越後湯澤滑雪四天：每日行程、預算計算機、方案比較與準備清單。">
 <meta name="theme-color" content="#0b0f17">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230b0f17%22/%3E%3Cpath d=%22M6 50 L24 26 L32 36 L42 20 L58 50 Z%22 fill=%22%23d8bd8c%22/%3E%3Cpath d=%22M42 20 L36 29 L40 28 L42 31 L45 28 L48 29 Z%22 fill=%22%23f4f0e9%22/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-title" content="湯澤滑雪">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>越後湯澤滑雪計劃</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -136,6 +139,7 @@ a:hover { color: var(--gold); }
 .hero .inner > :nth-child(4) { animation-delay: .3s; }
 .hero .inner > :nth-child(5) { animation-delay: .4s; }
 .hero .inner > :nth-child(6) { animation-delay: .5s; }
+.hero .inner > :nth-child(7) { animation-delay: .6s; }
 @keyframes rise { from { transform: translateY(18px); } to { transform: none; } }
 @media (max-width: 520px) { .hero .inner { padding-block: 52px calc(var(--scene-h) * .74); } }
 .count {
@@ -305,6 +309,85 @@ main section.pre .sec-head::before { transform: scaleX(0); }
 }
 
 /* ---------- Days ---------- */
+/* ---------- Route & resorts ---------- */
+.journey { list-style: none; margin: 0; padding: 0; display: grid; position: relative; }
+.journey li { position: relative; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.journey time { font-family: var(--ff-serif); font-weight: 600; font-size: 1.05rem; color: var(--gold); font-variant-numeric: lining-nums; letter-spacing: .02em; }
+.journey b { font-family: var(--ff-display); font-weight: 600; font-size: 1.08rem; letter-spacing: .06em; }
+.journey span { font-size: .8rem; color: var(--slate); font-weight: 300; line-height: 1.65; }
+.journey li::before { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--snow); border: 1.5px solid var(--ink); box-sizing: border-box; }
+.journey li.snow::before { width: 13px; height: 13px; background: var(--spruce); border-color: var(--spruce); box-shadow: 0 0 0 4px var(--spruce-soft); }
+.journey li.snow b { color: var(--spruce); }
+@media (min-width: 820px) {
+  .journey { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: 18px; padding-top: 30px; }
+  .journey::before { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 1px; background: linear-gradient(90deg, var(--line) 0 42%, var(--spruce) 42% 72%, var(--line) 72%); }
+  .journey li::before { top: -30px; left: 0; }
+  .journey li.snow::before { top: -32px; left: -2px; }
+}
+@media (max-width: 819px) {
+  .journey { gap: 22px; padding-left: 28px; }
+  .journey::before { content: ""; position: absolute; left: 4px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+  .journey li::before { left: -28px; top: 6px; }
+  .journey li.snow::before { left: -30px; top: 4px; }
+  .journey li { grid-template-columns: 72px 1fr; column-gap: 12px; }
+  .journey li span { grid-column: 2; }
+}
+.resorts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); margin-top: 64px; border-top: 1px solid var(--line); }
+.resort { display: grid; gap: 14px; align-content: start; padding: 28px 0 32px; border-bottom: 1px solid var(--rule); min-width: 0; }
+@media (min-width: 760px) { .resort + .resort { border-left: 1px solid var(--rule); padding-left: 36px; } .resort:first-child { padding-right: 36px; } }
+.resort .when { font-size: .7rem; letter-spacing: .26em; color: var(--gold); font-weight: 500; }
+.resort h3 { font-family: var(--ff-display); font-weight: 600; font-size: 1.9rem; letter-spacing: .14em; line-height: 1.2; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.resort h3 .ja { font-family: var(--ff-body); font-weight: 400; font-size: .8rem; letter-spacing: .1em; color: var(--slate); }
+.rs { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--rule); }
+.rs div { padding: 12px 0 12px; display: grid; gap: 4px; }
+.rs div + div { padding-left: 14px; border-left: 1px solid var(--rule); }
+.rs dt { font-size: .66rem; letter-spacing: .22em; color: var(--slate); }
+.rs dd { margin: 0; font-size: .78rem; color: var(--slate); white-space: nowrap; }
+.rs dd b { font-family: var(--ff-serif); font-weight: 600; font-size: 1.32rem; color: var(--ink); font-variant-numeric: lining-nums; }
+.diff { display: flex; gap: 2px; font-size: .7rem; letter-spacing: .08em; }
+.diff span { padding: 6px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.diff span:nth-child(1) { background: var(--spruce-soft); color: var(--spruce); }
+.diff span:nth-child(2) { background: var(--gold-soft); color: var(--gold); }
+.diff span:nth-child(3) { background: var(--ink); color: var(--snow); }
+.diff.tags-only { flex-wrap: wrap; gap: 6px; }
+.diff.tags-only span { background: none !important; color: var(--slate) !important; border: 1px solid var(--rule); padding: 3px 10px; }
+.resort > p { color: var(--slate); font-size: .92rem; font-weight: 300; line-height: 1.85; }
+.resort > p.fine { font-size: .78rem; }
+.resort .links { display: flex; gap: 22px; font-size: .84rem; }
+.resort .links a::after { content: " ↗"; color: var(--gold); }
+@media (max-width: 420px) { .rs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rs div:nth-child(3) { padding-left: 0; border-left: 0; } .rs div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+
+.wx { margin-top: 64px; background: var(--deep); color: var(--on-deep); padding: 30px 28px 24px; position: relative; overflow: hidden; }
+.wx a { color: var(--on-deep); }
+.wx-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 18px 28px; }
+.wx h3 { font-family: var(--ff-display); font-weight: 500; font-size: 1.4rem; letter-spacing: .1em; }
+.wx-sub { margin-top: 6px; font-size: .8rem; color: var(--deep-dim); font-weight: 300; }
+.wx-now { display: flex; align-items: center; gap: 14px; }
+.wx-now svg { width: 38px; height: 38px; color: var(--glow); }
+.wx-now b { display: block; font-family: var(--ff-serif); font-weight: 500; font-size: 2.3rem; line-height: 1; font-variant-numeric: lining-nums; }
+.wx-now small { display: block; font-size: .74rem; color: var(--deep-dim); letter-spacing: .1em; margin-top: 4px; }
+.wx-now .depth { padding-left: 16px; border-left: 1px solid color-mix(in srgb, var(--on-deep) 22%, transparent); }
+.wx-now .depth small { margin: 0 0 4px; }
+.wx-days { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid color-mix(in srgb, var(--on-deep) 18%, transparent); }
+.wx-days:empty { display: none; }
+.wx-days li { display: grid; justify-items: center; gap: 6px; padding: 16px 4px 14px; text-align: center; min-width: 0; }
+.wx-days li + li { border-left: 1px solid color-mix(in srgb, var(--on-deep) 12%, transparent); }
+.wx-days .dd { font-size: .7rem; letter-spacing: .14em; color: var(--deep-dim); }
+.wx-days .dd b { display: block; font-family: var(--ff-serif); font-weight: 600; font-size: 1.15rem; letter-spacing: 0; color: var(--on-deep); }
+.wx-days svg { width: 26px; height: 26px; color: var(--on-deep); }
+.wx-days li.sn svg { color: var(--glow); }
+.wx-days .tx { font-size: .7rem; color: var(--deep-dim); }
+.wx-days .tt { font-family: var(--ff-num); font-size: .8rem; font-feature-settings: "tnum" 1; }
+.wx-days .tt i { font-style: normal; color: var(--deep-dim); }
+.wx-days .sf { font-family: var(--ff-num); font-size: .72rem; color: var(--glow); min-height: 1.2em; }
+.wx-days li.trip { background: color-mix(in srgb, var(--glow) 12%, transparent); }
+.wx-foot { margin-top: 14px; font-size: .74rem; color: var(--deep-dim); font-weight: 300; line-height: 1.7; }
+@media (max-width: 620px) {
+  .wx { padding: 26px 20px 20px; margin-inline: -20px; }
+  .wx-days { grid-template-columns: repeat(7, 74px); overflow-x: auto; scrollbar-width: none; margin-right: -20px; }
+  .wx-days::-webkit-scrollbar { display: none; }
+}
+
 .days { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--rule); }
 .day { display: grid; grid-template-columns: 116px 1fr; gap: 28px; position: relative; padding: 28px 0 32px; border-top: 1px solid var(--rule); }
 .day:first-child { border-top: 0; padding-top: 4px; }
@@ -332,6 +415,18 @@ main section.pre .sec-head::before { transform: scaleX(0); }
 .phase .pill svg { width: 18px; height: 18px; color: var(--gold); flex: none; }
 .phase .pill .t { display: inline-flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; }
 .phase .pill small { font-weight: 400; color: var(--slate); font-size: .78rem; white-space: nowrap; letter-spacing: .06em; }
+.tl { list-style: none; margin: 8px 0 2px; padding: 0 0 0 16px; display: grid; gap: 7px; position: relative; font-size: .86rem; }
+.tl::before { content: ""; position: absolute; left: 3px; top: 7px; bottom: 7px; width: 1px; background: var(--rule); }
+.tl li { display: grid; grid-template-columns: 5.6em 1fr; gap: 10px; position: relative; color: var(--slate); font-weight: 300; }
+.tl li::before { content: ""; position: absolute; left: -16px; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1px solid var(--slate); box-sizing: border-box; }
+.tl li.k { color: var(--ink); font-weight: 400; }
+.tl li.k::before { background: var(--gold); border-color: var(--gold); }
+.tl time { font-family: var(--ff-num); font-feature-settings: "tnum" 1; font-size: .8rem; color: var(--gold); letter-spacing: .03em; padding-top: 1px; }
+.day.today { background: linear-gradient(90deg, var(--gold-soft), transparent 70%); }
+.day.today::before { content: "TODAY"; position: absolute; left: 0; top: -1px; padding: 3px 8px; font-family: var(--ff-num); font-size: .6rem; letter-spacing: .3em; background: var(--gold); color: var(--paper); }
+.day.today .no .sign { color: var(--gold); }
+.day.past { opacity: .55; }
+.strip a.today { outline: 1.5px solid var(--gold); outline-offset: -1.5px; }
 .day .stay { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: .88rem; }
 .day .stay svg { width: 16px; height: 16px; color: var(--gold); align-self: center; flex: none; }
 .day .stay span { font-size: .68rem; letter-spacing: .18em; color: var(--gold); }
@@ -469,6 +564,22 @@ main section.pre .sec-head::before { transform: scaleX(0); }
 .detail { margin-top: 44px; background: var(--paper); border: 1px solid var(--rule); padding: 28px 0 6px; }
 .detail h3 { font-family: var(--ff-display); font-weight: 600; font-size: 1.4rem; letter-spacing: .06em; padding: 0 24px; }
 .detail .cap { padding: 8px 24px 0; font-size: .82rem; color: var(--slate); font-weight: 300; line-height: 1.75; }
+.fold-lead { margin-top: 44px; font-size: .74rem; letter-spacing: .26em; color: var(--gold); }
+details.fold { margin-top: 12px; padding: 0; }
+details.fold + details.fold { margin-top: -1px; }
+details.fold > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: center; padding: 22px 24px; }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary::after { content: "＋"; grid-column: 2; grid-row: 1 / span 2; color: var(--gold); font-size: 1.1rem; transition: transform .3s var(--ease); }
+details.fold[open] > summary::after { content: "－"; }
+details.fold > summary:hover .fh { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 6px; }
+details.fold > summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+details.fold .fh { font-family: var(--ff-display); font-weight: 600; font-size: 1.22rem; letter-spacing: .06em; }
+details.fold .fs { grid-column: 1; font-size: .8rem; color: var(--slate); font-weight: 300; }
+details.fold[open] { padding-bottom: 6px; }
+details.fold[open] > summary { padding-bottom: 4px; }
+.hero .crew { margin-top: 18px; font-family: var(--ff-display); font-weight: 500; font-size: clamp(.92rem, 3.4vw, 1.05rem); letter-spacing: .32em; color: var(--glow); }
+.hero .crew:empty { display: none; }
+.hero .crew i { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--hero-dim); vertical-align: middle; margin: 0 .7em 0 .38em; opacity: .7; }
 .detail .table-wrap { overflow-x: auto; margin-top: 16px; -webkit-overflow-scrolling: touch; }
 table.cmp { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .86rem; }
 table.cmp th, table.cmp td { padding: 12px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
@@ -563,6 +674,20 @@ table.cmp tr.text td.v { font-family: var(--ff-body); text-align: left; white-sp
 .contact h3 .ja { font-family: var(--ff-body); font-weight: 400; font-size: .78rem; letter-spacing: .08em; color: var(--slate); }
 .copy { font: inherit; font-size: .68rem; letter-spacing: .1em; margin-left: 8px; padding: 2px 9px; border: 1px solid var(--rule); background: transparent; color: var(--slate); cursor: pointer; vertical-align: 1px; transition: color .2s, border-color .2s; }
 .copy:hover { color: var(--ink); border-color: var(--gold); }
+.places { margin-top: 56px; }
+.places-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+.places h3 { font-family: var(--ff-display); font-weight: 600; font-size: 1.4rem; letter-spacing: .06em; }
+.places .cap { margin-top: 10px; font-size: .84rem; color: var(--slate); font-weight: 300; line-height: 1.8; max-width: 44em; }
+.pill { font: inherit; font-size: .84rem; letter-spacing: .1em; display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; background: var(--ink); color: var(--snow); border: 1px solid var(--ink); cursor: pointer; transition: background .25s, color .25s; }
+.pill svg { width: 16px; height: 16px; }
+.pill:hover { background: transparent; color: var(--ink); }
+.pill:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.place-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); column-gap: 32px; border-top: 1px solid var(--line); }
+.place-list a { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.place-list a::after { content: "↗"; grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--gold); transition: transform .25s var(--ease); }
+.place-list a:hover::after { transform: translate(2px, -2px); }
+.place-list b { font-weight: 500; font-size: .95rem; color: var(--ink); }
+.place-list span { font-size: .76rem; color: var(--slate); font-weight: 300; }
 .sources { margin: 36px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: .86rem; font-weight: 300; }
 .sources li { overflow-wrap: anywhere; }
 .sources .h { font-family: var(--ff-num); font-size: .66rem; font-weight: 500; letter-spacing: .3em; color: var(--slate); margin-bottom: 4px; }
@@ -703,10 +828,11 @@ main section.pre { transform: translateY(26px); }
     <p class="eyebrow"><span>NIIGATA</span><i></i><span>ECHIGO-YUZAWA</span></p>
     <h1>越後湯澤<span class="line2">滑雪計劃</span></h1>
     <p class="en">Into the Snow Country<span>FEBRUARY 2027</span></p>
+    <p class="crew" id="crew"></p>
     <dl class="stats">
       <div><dt>日期 · 2027</dt><dd>2/11–18<small>8 天</small></dd></div>
       <div><dt>人數</dt><dd>3<small>人・2 人上課</small></dd></div>
-      <div><dt>上課者每人預算約</dt><dd><span class="cur">NT$</span><span id="hdrBudget">—</span></dd></div>
+      <div><dt>上課者每人總預算約</dt><dd><span class="cur">NT$</span><span id="hdrBudget">—</span></dd></div>
     </dl>
     <div id="loadErr" class="err" hidden></div>
   </div>
@@ -719,6 +845,7 @@ main section.pre { transform: translateY(26px); }
   <div class="wrap">
     <a class="mark" href="#top">Yuzawa<span>2027</span></a>
     <a href="#overview">概要</a>
+    <a href="#route">路線雪場</a>
     <a href="#days">每日行程</a>
     <a href="#budget">預算</a>
     <a href="#compare">方案比較</a>
@@ -742,6 +869,13 @@ main section.pre { transform: translateY(26px); }
   <symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 13.5l17-6.5c1.3-.5 2.4.2 1.9 1.3-.3.6-.9 1-1.6 1.3L6 15.5l-3-1.2z"/><path d="M9 11.2L6.5 5.5 9 4.6l5.4 4.3M10.5 13.8l1.5 4.7 2.3-.8.6-5.6"/><path d="M3 21h18"/></symbol>
   <symbol id="i-city" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5-3v14M8 21V4h8v17M16 21V10h5v11M2 21h20"/><path d="M11 8h2M11 11h2M11 14h2"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+  <symbol id="w-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
+  <symbol id="w-part" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5v1.4M3.8 9.7h1.4M5.3 6l1 1M12.7 6l-1 1"/><path d="M6.6 11.6a3 3 0 015.3-2.4"/><path d="M8 19.5h9.5a3.5 3.5 0 00.4-7 5 5 0 00-9.6 1.2A3 3 0 008 19.5z"/></symbol>
+  <symbol id="w-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5h10.5a4 4 0 00.5-8 6 6 0 00-11.4 1.6A3.3 3.3 0 007 18.5z"/></symbol>
+  <symbol id="w-fog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h16M3 13h18M5 17h14"/></symbol>
+  <symbol id="w-rain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14.5h10.5a4 4 0 00.5-8 6 6 0 00-11.4 1.6A3.3 3.3 0 007 14.5z"/><path d="M8.5 17.5l-1 2.5M12.5 17.5l-1 2.5M16.5 17.5l-1 2.5"/></symbol>
+  <symbol id="w-snow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5h10.5a4 4 0 00.5-8 6 6 0 00-11.4 1.6A3.3 3.3 0 007 13.5z"/><path d="M8.5 17v4M6.8 19h3.4M15.5 17v4M13.8 19h3.4"/></symbol>
+  <symbol id="w-storm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14.5h10.5a4 4 0 00.5-8 6 6 0 00-11.4 1.6A3.3 3.3 0 007 14.5z"/><path d="M12.5 15.5l-2 3.5h3l-2 3.5"/></symbol>
   <symbol id="i-yen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l5 7 5-7M12 11v9M8 13h8M8 16.5h8"/></symbol>
 </svg>
 
@@ -751,7 +885,7 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Overview</span>
       <h2>行程概要</h2>
-      <p>選定方案二：2 人上瘋雪中文單板課 2 天，3 人都向 Boo Sports 租單板全套 4 天。</p>
+      <p>選定方案二：2 人上瘋雪中文單板課 2 天，3 人都向 SNOW RENTAL SHOP 租單板全套 4 天。</p>
     </div>
     <div class="strip-wrap">
       <div class="strip"><a href="#days" class="" aria-label="2 月 11 日（四）出發"><span class="dow">四</span><span class="d">11</span><span class="w">出發</span></a><a href="#days" class="" aria-label="2 月 12 日（五）東京"><span class="dow">五</span><span class="d">12</span><span class="w">東京</span></a><a href="#days" class="we" aria-label="2 月 13 日（六）移動"><span class="dow">六</span><span class="d">13</span><span class="w">移動</span></a><a href="#days" class="lesson we" aria-label="2 月 14 日（日）上課"><span class="dow">日</span><span class="d">14</span><span class="w">上課</span></a><a href="#days" class="lesson" aria-label="2 月 15 日（一）上課"><span class="dow">一</span><span class="d">15</span><span class="w">上課</span></a><a href="#days" class="ski" aria-label="2 月 16 日（二）滑雪"><span class="dow">二</span><span class="d">16</span><span class="w">滑雪</span></a><a href="#days" class="ski" aria-label="2 月 17 日（三）滑雪"><span class="dow">三</span><span class="d">17</span><span class="w">滑雪</span></a><a href="#days" class="" aria-label="2 月 18 日（四）回家"><span class="dow">四</span><span class="d">18</span><span class="w">回家</span></a></div>
@@ -772,8 +906,8 @@ main section.pre { transform: translateY(26px); }
       <div class="tile wide">
         <div class="ico"><svg><use href="#i-gear"/></svg></div>
         <div class="lab">雪具</div>
-        <div class="val">Boo Sports・單板全套 4 天</div>
-        <div class="sub">3 人份，2/14–17 用同一套；岩原等雪場接送預約時再確認</div>
+        <div class="val">SNOW RENTAL SHOP・單板全套 4 天</div>
+        <div class="sub">3 人份，2/14–17 用同一套；接送、歸還時間和店址預約時確認</div>
       </div>
       <div class="tile">
         <div class="ico"><svg><use href="#i-ticket"/></svg></div>
@@ -815,6 +949,71 @@ main section.pre { transform: translateY(26px); }
     </div>
   </section>
 
+  <section id="route">
+    <div class="sec-head">
+      <span class="kicker">Route</span>
+      <h2>路線與雪場</h2>
+      <p>從桃園到成田、淺草，再搭上越新幹線進雪國。四天滑雪住在 Angel Resort Yuzawa，前兩天在岩原上課，後兩天去神立。</p>
+    </div>
+
+    <ol class="journey" aria-label="整趟路線">
+      <li><time>2/11</time><b>台灣桃園</b><span>JL8664 13:30 起飛</span></li>
+      <li><time>2/11</time><b>成田機場</b><span>17:35 抵達，電車約 1 小時多到淺草</span></li>
+      <li><time>2/11–12</time><b>淺草</b><span>東橫 INN 2 晚</span></li>
+      <li class="rail"><time>2/13</time><b>東京站</b><span>上越新幹線直達越後湯澤</span></li>
+      <li class="snow"><time>2/13–17</time><b>越後湯澤</b><span>Angel Resort Yuzawa 4 晚，岩原、神立</span></li>
+      <li class="rail"><time>2/17</time><b>成田機場</b><span>新幹線回東京再轉車，東橫 INN 1 晚</span></li>
+      <li><time>2/18</time><b>台灣桃園</b><span>JL8663 09:10 起飛，12:15 抵達</span></li>
+    </ol>
+
+    <div class="resorts">
+      <article class="resort">
+        <p class="when">2/14–15 上課・2/16–17 可選</p>
+        <h3>岩原<span class="ja">岩原スキー場</span></h3>
+        <dl class="rs">
+          <div><dt>標高</dt><dd><b>400–985</b> m</dd></div>
+          <div><dt>滑道</dt><dd><b>20</b> km</dd></div>
+          <div><dt>纜車</dt><dd><b>9</b> 條</dd></div>
+          <div><dt>一日券</dt><dd><b class="num" data-jpy="liftTicketsJpyPerDay.iwappara"></b></dd></div>
+        </dl>
+        <div class="diff" role="img" aria-label="雪道難度：初級 40%、中級 40%、高級 20%"><span style="flex:40">初級 40%</span><span style="flex:40">中級 40%</span><span style="flex:20">高級 20%</span></div>
+        <p>寬廣的初中級雪道多，適合上課。Angel Resort Yuzawa 就在旁邊，越後湯澤站東口也有免費巴士。纜車 08:00–17:00。</p>
+        <p class="fine">預算用一日券 ¥5,000；skiresort.com 寫 ¥5,500，買票前再確認。</p>
+        <p class="links"><a href="https://www.skiresort.com/en/ski-resort/iwappara/snow-report/" target="_blank" rel="noopener">雪況</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4" target="_blank" rel="noopener">Google 地圖</a></p>
+      </article>
+      <article class="resort">
+        <p class="when">2/16–17 三人一起滑</p>
+        <h3>神立<span class="ja">神立スノーリゾート</span></h3>
+        <dl class="rs">
+          <div><dt>標高</dt><dd><b>471–969</b> m</dd></div>
+          <div><dt>滑道</dt><dd><b>11.6</b> km</dd></div>
+          <div><dt>纜車</dt><dd><b>7</b> 條</dd></div>
+          <div><dt>一日券</dt><dd><b class="num" data-jpy="liftTicketsJpyPerDay.kandatsu"></b></dd></div>
+        </dl>
+        <div class="diff tags-only"><span>13 條雪道</span><span>北向坡</span><span>樹林道</span><span>週五、六夜滑</span></div>
+        <p>北向坡雪質維持得比較好，有樹林道可以玩，適合上完課之後進階。離越後湯澤市區約 4.3 km，有巴士。</p>
+        <p class="fine">預算用一日券 ¥7,000；skiresort.com 寫 ¥6,800，買票前再確認。</p>
+        <p class="links"><a href="https://www.skiresort.com/en/ski-resort/pine-ridge-resort-kandatsu/snow-report/" target="_blank" rel="noopener">雪況</a><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E7%AB%8B%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88" target="_blank" rel="noopener">Google 地圖</a></p>
+      </article>
+    </div>
+
+    <div class="wx" id="wx" aria-live="polite">
+      <div class="wx-head">
+        <div>
+          <h3>越後湯澤・未來 7 天</h3>
+          <p class="wx-sub" id="wxSub">正在抓天氣預報…</p>
+        </div>
+        <div class="wx-now" id="wxNow" hidden>
+          <svg aria-hidden="true"><use id="wxNowIco" href="#w-sun"/></svg>
+          <span><b id="wxNowT">—</b><small id="wxNowTxt"></small></span>
+          <span class="depth"><small>積雪</small><b id="wxDepth">—</b></span>
+        </div>
+      </div>
+      <ol class="wx-days" id="wxDays"></ol>
+      <p class="wx-foot">天氣資料：<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>，越後湯澤站一帶的模型預報，山上雪場通常更冷、雪更多。出發前一週會開始預報到旅行日期。</p>
+    </div>
+  </section>
+
   <section id="days">
     <div class="sec-head">
       <span class="kicker">Itinerary</span>
@@ -822,17 +1021,18 @@ main section.pre { transform: translateY(26px); }
       <p>8 天 7 夜：東京兩天，越後湯澤滑雪四天，最後一晚住機場的東橫 INN。</p>
     </div>
     <ol class="days">
-      <li class="day">
+      <li class="day" data-date="2027-02-11">
         <div class="no"><span class="sign">11</span><small>出發</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
           <h3>出發，晚上抵達東京</h3>
           <p>搭日本航空 JL8664，13:30 從桃園起飛，17:35 到成田，再搭電車到淺草（約 1 小時多），入住淺草東橫 INN。</p>
-          <div class="tags"><span class="tag">JL8664 桃園 13:30 → 成田 17:35</span><span class="tag">淺草</span></div>
+          <ol class="tl"><li><time>11:30</time><span>桃園機場報到（起飛前 2 小時）</span></li><li class="k"><time>13:30</time><span>JL8664 起飛</span></li><li class="k"><time>17:35</time><span>抵達成田</span></li><li><time>晚上</time><span>電車到淺草，入住東橫 INN</span></li></ol>
+          <div class="tags"><span class="tag">淺草</span></div>
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>淺草東橫 INN</b><small>第 1／2 晚・每人 2 晚 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span></small></div>
         </div>
       </li>
-      <li class="day">
+      <li class="day" data-date="2027-02-12">
         <div class="no"><span class="sign">12</span><small>東京</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-city"/></svg></span>
@@ -842,17 +1042,18 @@ main section.pre { transform: translateY(26px); }
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>淺草東橫 INN</b><small>第 2／2 晚</small></div>
         </div>
       </li>
-      <li class="day">
+      <li class="day" data-date="2027-02-13">
         <div class="no"><span class="sign">13</span><small>移動</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-train"/></svg></span>
           <h3>東京 → 越後湯澤</h3>
           <p>白天在東京，晚上搭新幹線到越後湯澤、入住 Angel Resort Yuzawa；看交通狀況，可能提早到下午出發。可以的話先到雪具店取件、試穿雪鞋（營業時間要問店家），不然就 14 日早上再取。</p>
+          <ol class="tl"><li><time>白天</time><span>東京</span></li><li class="k"><time>下午～晚上</time><span>東京站搭上越新幹線</span></li><li><time>晚上</time><span>到越後湯澤，入住 Angel Resort</span></li></ol>
           <div class="tags"><span class="tag">新幹線自由席 <span class="num" data-jpy="shinkansenTokyoEchigoYuzawaOneWayJpy.nonReserved"></span></span><span class="tag">雪具取件</span></div>
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>Angel Resort Yuzawa</b><small>第 1／4 晚・三人房 4 晚 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span></small></div>
         </div>
       </li>
-      <li class="day lesson">
+      <li class="day lesson" data-date="2027-02-14">
         <div class="no"><span class="sign">14</span><small>上課 1</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-coach"/></svg></span>
@@ -862,7 +1063,7 @@ main section.pre { transform: translateY(26px); }
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>Angel Resort Yuzawa</b><small>第 2／4 晚</small></div>
         </div>
       </li>
-      <li class="day lesson">
+      <li class="day lesson" data-date="2027-02-15">
         <div class="no"><span class="sign">15</span><small>上課 2</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-coach"/></svg></span>
@@ -873,7 +1074,7 @@ main section.pre { transform: translateY(26px); }
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>Angel Resort Yuzawa</b><small>第 3／4 晚</small></div>
         </div>
       </li>
-      <li class="day">
+      <li class="day" data-date="2027-02-16">
         <div class="no"><span class="sign">16</span><small>滑雪 3</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-swap"/></svg></span>
@@ -883,23 +1084,24 @@ main section.pre { transform: translateY(26px); }
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>Angel Resort Yuzawa</b><small>第 4／4 晚</small></div>
         </div>
       </li>
-      <li class="day">
+      <li class="day" data-date="2027-02-17">
         <div class="no"><span class="sign">17</span><small>滑雪 4</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-ski"/></svg></span>
           <h3>其他雪場滑雪，晚上前往成田</h3>
-          <p>Boo Sports 要在 <span class="num" data-text="chosenPlan.rental.returnBy"></span> 前歸還，所以這天要早點收板，還完再搭新幹線回東京，轉車到成田機場的東橫 INN，隔天一早搭機。</p>
-          <div class="tags"><span class="tag">神立 <span class="num" data-jpy="liftTicketsJpyPerDay.kandatsu"></span></span><span class="tag">岩原 <span class="num" data-jpy="liftTicketsJpyPerDay.iwappara"></span></span><span class="tag">17:00 前還雪具</span></div>
+          <p>雪具要在 SNOW RENTAL SHOP 規定的時間前歸還（時間待確認），所以這天要早點收板，還完再搭新幹線回東京，轉車到成田機場的東橫 INN，隔天一早搭機。</p>
+          <ol class="tl"><li><time>白天</time><span>滑雪，早點收板</span></li><li class="k"><time>待確認</time><span>SNOW RENTAL SHOP 還雪具</span></li><li><time>之後</time><span>新幹線回東京，轉車到成田</span></li><li><time>晚上</time><span>入住成田機場東橫 INN</span></li></ol>
+          <div class="tags"><span class="tag">神立 <span class="num" data-jpy="liftTicketsJpyPerDay.kandatsu"></span></span><span class="tag">岩原 <span class="num" data-jpy="liftTicketsJpyPerDay.iwappara"></span></span><span class="tag">還雪具</span></div>
           <div class="stay"><svg aria-hidden="true"><use href="#i-bed"/></svg><span>當晚住宿</span><b>成田機場東橫 INN</b><small>1 晚・四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span> 三人分</small></div>
         </div>
       </li>
-      <li class="day">
+      <li class="day" data-date="2027-02-18">
         <div class="no"><span class="sign">18</span><small>回家</small></div>
         <div class="card">
           <span class="dico" aria-hidden="true"><svg><use href="#i-plane"/></svg></span>
           <h3>回台灣</h3>
           <p>搭日本航空 JL8663，09:10 從成田起飛，12:15 到桃園。國際線建議起飛前 2 小時到機場。</p>
-          <div class="tags"><span class="tag">JL8663 成田 09:10 → 桃園 12:15</span></div>
+          <ol class="tl"><li><time>07:10</time><span>到成田機場（起飛前 2 小時）</span></li><li class="k"><time>09:10</time><span>JL8663 起飛</span></li><li class="k"><time>12:15</time><span>抵達桃園</span></li></ol>
           <div class="stay none"><svg aria-hidden="true"><use href="#i-plane"/></svg><span>當晚住宿</span><b>不用住宿，搭機回台灣</b></div>
         </div>
       </li>
@@ -987,7 +1189,7 @@ main section.pre { transform: translateY(26px); }
     <div class="sec-head">
       <span class="kicker">Compare</span>
       <h2>方案比較</h2>
-      <p>上面兩張卡片是上課者每人費用（不含交通，後 2 天用岩原算）。下面的詳細比價表加上 2/16–17 雪票和新幹線，算到 3 人合計；不上課的人兩個方案花費一樣。</p>
+      <p>兩張卡片是上課者每人的滑雪相關費用（教練、雪具、雪票、新幹線），跟著預算計算機的選項變。機票、住宿這些兩個方案一樣，不放進來。不上課的人兩個方案花費也一樣。</p>
     </div>
     <div class="vs">
       <div class="plan">
@@ -997,7 +1199,8 @@ main section.pre { transform: translateY(26px); }
         <dl>
           <div><i style="background:var(--c1)"></i><dt>教練 2 天＋上課雪票</dt><dd id="p1Coach"></dd></div>
           <div><i style="background:var(--c2)"></i><dt>雪具</dt><dd id="p1Rental"></dd></div>
-          <div><i style="background:var(--c3)"></i><dt>後 2 天雪票</dt><dd id="p1Lift"></dd></div>
+          <div><i style="background:var(--c3)"></i><dt>2/16–17 雪票</dt><dd id="p1Lift"></dd></div>
+          <div><i style="background:var(--c4)"></i><dt>新幹線來回</dt><dd id="p1Train"></dd></div>
         </dl>
         <p class="misc">接駁含；上課 2 天含保險。只要聯絡一家。</p>
       </div>
@@ -1008,7 +1211,8 @@ main section.pre { transform: translateY(26px); }
         <dl>
           <div><i style="background:var(--c1)"></i><dt>教練 2 天＋上課雪票</dt><dd id="p2Coach"></dd></div>
           <div><i style="background:var(--c2)"></i><dt>雪具</dt><dd id="p2Rental"></dd></div>
-          <div><i style="background:var(--c3)"></i><dt>後 2 天雪票</dt><dd id="p2Lift"></dd></div>
+          <div><i style="background:var(--c3)"></i><dt>2/16–17 雪票</dt><dd id="p2Lift"></dd></div>
+          <div><i style="background:var(--c4)"></i><dt>新幹線來回</dt><dd id="p2Train"></dd></div>
         </dl>
         <p class="misc" id="p2Misc"></p>
       </div>
@@ -1018,27 +1222,29 @@ main section.pre { transform: translateY(26px); }
       <div class="l"><span id="saveLbl">上課 2 人共省約</span> <span class="num" id="saveTwd2"></span></div>
     </div>
     <ul class="notes">
-      <li>Boo Sports 單板全套（板、鞋、雪衣褲）加安全帽、雪鏡、手套，4 天 <span class="num" id="cmpRentJpy"></span>；<span id="oldRentCmp"></span>自備雪鏡和手套還能再省。</li>
+      <li>SNOW RENTAL SHOP 板鞋、雪衣褲加安全帽、雪鏡、手套，4 天 <span class="num" id="cmpRentJpy"></span>；<span id="oldRentCmp"></span>自備雪鏡和手套還能再省。</li>
       <li>長條長度代表總額，兩個方案用同一個比例尺。</li>
     </ul>
 
-    <div class="detail" id="detail">
-      <h3>詳細比價表</h3>
+    <p class="fold-lead">想看算法再展開：</p>
+
+    <details class="detail fold" id="detail">
+      <summary><span class="fh">詳細比價表</span><span class="fs">兩個方案逐項比，算到 3 人合計</span></summary>
       <p class="cap" id="cmpCap"></p>
       <div class="table-wrap">
         <table class="cmp">
-          <thead><tr><th>項目</th><th class="amt">方案一・全包教練</th><th class="amt p2">方案二・瘋雪＋Boo Sports</th><th class="amt">方案二省</th></tr></thead>
+          <thead><tr><th>項目</th><th class="amt">方案一・全包教練</th><th class="amt p2">方案二・瘋雪＋SNOW</th><th class="amt">方案二省</th></tr></thead>
           <tbody id="cmpBody"></tbody>
         </table>
       </div>
-    </div>
+    </details>
 
-    <div class="detail" id="gear">
-      <h3>Boo Sports・單板方案比較</h3>
+    <details class="detail fold" id="gear">
+      <summary><span class="fh">SNOW RENTAL SHOP・租法比較</span><span class="fs">分開租、店家全套、部分自備，含單項價目</span></summary>
       <p class="cap" id="gearCap"></p>
       <div class="table-wrap">
         <table class="cmp gear">
-          <thead><tr><th>完整一套（含安全帽、雪鏡、手套）</th><th class="amt">4 天每人</th><th class="amt">約台幣</th><th class="amt">3 人</th></tr></thead>
+          <thead><tr><th>租法</th><th class="amt">4 天每人</th><th class="amt">約台幣</th><th class="amt">3 人</th></tr></thead>
           <tbody id="gearKits"></tbody>
         </table>
       </div>
@@ -1046,23 +1252,23 @@ main section.pre { transform: translateY(26px); }
         <summary>單項價目（店家價目表，成人）</summary>
         <div class="table-wrap">
           <table class="cmp gear items">
-            <thead><tr><th>項目</th><th class="amt">1 日</th><th class="amt">2 日</th><th class="amt">續借 1 日</th><th class="amt">4 天</th></tr></thead>
+            <thead><tr><th>項目</th><th class="amt">1 日</th><th class="amt">2 日</th><th class="amt">第 3 天起每日</th><th class="amt">4 天</th></tr></thead>
             <tbody id="gearItems"></tbody>
           </table>
         </div>
       </details>
-    </div>
+    </details>
 
-    <div class="detail" id="shopCmp">
-      <h3>雪具店比價・4 天</h3>
+    <details class="detail fold" id="shopCmp">
+      <summary><span class="fh">雪具店比價・4 天</span><span class="fs">SNOW RENTAL SHOP 對 Boo Sports</span></summary>
       <p class="cap" id="shopCap"></p>
       <div class="table-wrap">
         <table class="cmp gear shop">
-          <thead><tr><th>每人</th><th class="amt p2">Boo Sports</th><th class="amt">SNOW RENTAL SHOP</th><th class="amt">哪家便宜</th></tr></thead>
+          <thead><tr><th>每人</th><th class="amt p2">SNOW RENTAL SHOP</th><th class="amt">Boo Sports</th><th class="amt">差額</th></tr></thead>
           <tbody id="shopRows"></tbody>
         </table>
       </div>
-    </div>
+    </details>
   </section>
 
   <section id="todo">
@@ -1087,7 +1293,7 @@ main section.pre { transform: translateY(26px); }
       <li><label><input type="checkbox" id="t-flight"><span>訂機票（3 人）：日本航空 2/11 JL8664 桃園 13:30 → 成田、2/18 JL8663 成田 09:10 → 桃園，共 <span class="num" data-twd="flight.totalTwd"></span></span></label></li>
       <li><label><input type="checkbox" id="t-confirm"><span>向瘋雪確認 <span class="num" data-twd="chosenPlan.coach.bundleTwdPerPerson"></span> 組合價是每人還是 2 人合計，以及岩原以外的雪場是否加收場地費</span></label></li>
       <li><label><input type="checkbox" id="t-coach"><span>預約瘋雪單板課：2/14–15，2 人班（LINE @crazyforsnow）</span></label></li>
-      <li><label><input type="checkbox" id="t-rental"><span>預約 Boo Sports 2/14–17 單板全套 3 人份；問清楚岩原和其他雪場的接送、能不能接送到 Angel Resort Yuzawa、能不能 2/13 晚上取件（記得帶護照）</span></label></li>
+      <li><label><input type="checkbox" id="t-rental"><span>預約 SNOW RENTAL SHOP 2/14–17 單板全套 3 人份；問清楚店址、歸還時間、岩原和神立的接送、能不能接送到 Angel Resort Yuzawa、能不能 2/13 晚上取件</span></label></li>
       <li><label><input type="checkbox" id="t-tokyo"><span>訂淺草東橫 INN：2/11–12，2 晚（每人 <span class="num" data-jpy="lodging.asakusa.perPersonJpy"></span>）</span></label></li>
       <li><label><input type="checkbox" id="t-hotel"><span>訂 Angel Resort Yuzawa：2/13–16，4 晚三人房 <span class="num" data-jpy="lodging.angelResort.totalJpy"></span>（Booking.com 連結在「聯絡資訊」）</span></label></li>
       <li><label><input type="checkbox" id="t-airport"><span>訂成田機場東橫 INN：2/17，1 晚四人房 <span class="num" data-jpy="lodging.narita.totalJpy"></span>（隔天 09:10 從成田起飛）</span></label></li>
@@ -1111,6 +1317,7 @@ main section.pre { transform: translateY(26px); }
           <dt>去程</dt><dd>2/11（四）JL8664<br>桃園 13:30 → 成田 17:35</dd>
           <dt>回程</dt><dd>2/18（四）JL8663<br>成田 09:10 → 桃園 12:15</dd>
           <dt>艙等</dt><dd>經濟艙 Economy Standard</dd>
+          <dt>航廈</dt><dd>出發前看電子機票上的航廈和實際承運航空</dd>
           <dt>費用</dt><dd>3 人 <span class="num" data-twd="flight.totalTwd"></span>（票價 <span class="num" data-twd="flight.fareTwd"></span>＋稅金附加費 <span class="num" data-twd="flight.taxTwd"></span>）</dd>
         </dl>
       </div>
@@ -1131,15 +1338,23 @@ main section.pre { transform: translateY(26px); }
         </dl>
       </div>
       <div class="contact">
-        <h3>Boo Sports <span class="ja" data-text="chosenPlan.rental.providerJa"></span></h3>
+        <h3>SNOW RENTAL SHOP</h3>
         <dl>
           <dt>位置</dt><dd data-text="chosenPlan.rental.location"></dd>
-          <dt>歸還</dt><dd>當天 <span class="num" data-text="chosenPlan.rental.returnBy"></span> 前</dd>
+          <dt>歸還</dt><dd data-text="chosenPlan.rental.returnBy"></dd>
           <dt>接駁</dt><dd data-text="chosenPlan.rental.shuttle"></dd>
-          <dt>證件</dt><dd>租借時要護照或在留卡影本</dd>
+          <dt>備註</dt><dd>方案一全包教練合作的也是這家</dd>
           <dt>價目表</dt><dd>見下方「價目表原圖」</dd>
         </dl>
       </div>
+    </div>
+    <div class="places">
+      <div class="places-head">
+        <h3>地圖與行事曆</h3>
+        <div class="tools"><button type="button" class="pill" id="icsBtn"><svg aria-hidden="true"><use href="#i-cal"/></svg>加入行事曆</button></div>
+      </div>
+      <p class="cap">點地點直接開 Google 地圖。「加入行事曆」會下載一個 .ics 檔，裡面有兩段航班、三間住宿、教練課和新幹線，手機打開就能加進 Google 或 Apple 行事曆。<span id="offNote"></span></p>
+      <ul class="place-list"><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E6%A8%AAINN%20%E6%B5%85%E8%8D%89" target="_blank" rel="noopener"><b>淺草東橫 INN</b><span>2/11–12</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85" target="_blank" rel="noopener"><b>越後湯澤站</b><span>2/13 新幹線到站</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%82%A8%E3%83%B3%E3%82%B8%E3%82%A7%E3%83%AB%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>Angel Resort Yuzawa</b><span>2/13–16</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=SNOW%20RENTAL%20SHOP%20%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2" target="_blank" rel="noopener"><b>SNOW RENTAL SHOP</b><span>店址待確認，先用搜尋</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B2%A9%E5%8E%9F%E3%82%B9%E3%82%AD%E3%83%BC%E5%A0%B4" target="_blank" rel="noopener"><b>岩原スキー場</b><span>2/14–15</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%A5%9E%E7%AB%8B%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%AA%E3%82%BE%E3%83%BC%E3%83%88" target="_blank" rel="noopener"><b>神立スノーリゾート</b><span>2/16–17</span></a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E6%A8%AAINN%20%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF" target="_blank" rel="noopener"><b>成田機場東橫 INN</b><span>2/17</span></a></li></ul>
     </div>
     <ul class="sources">
       <li class="h">資料來源（2026 年 10 月查詢）</li>
@@ -1163,10 +1378,10 @@ main section.pre { transform: translateY(26px); }
     <details class="imgs" id="imgDetails">
       <summary>4 張店家價目表</summary>
       <div class="gallery">
+        <button type="button" data-full="images/snow-rental-shop-price-list.jpg" data-cap="SNOW RENTAL SHOP 租借價目表"><img loading="lazy" src="images/snow-rental-shop-price-list-thumb.jpg" alt="SNOW RENTAL SHOP 價目表"><span>SNOW RENTAL SHOP・租借價目（選用）</span></button>
         <button type="button" data-full="images/new-shop-rental-prices.jpg" data-cap="Boo Sports 租借價目表"><img loading="lazy" src="images/new-shop-rental-prices-thumb.jpg" alt="Boo Sports 租借價目表"><span>Boo Sports・租借價目</span></button>
         <button type="button" data-full="images/plan1-allinclusive-coach-prices.jpg" data-cap="方案一：全包式滑雪套裝教練價格"><img loading="lazy" src="images/plan1-allinclusive-coach-prices-thumb.jpg" alt="方案一全包式教練價目表"><span>方案一・全包教練價格</span></button>
         <button type="button" data-full="images/plan1-allinclusive-gear-list.jpg" data-cap="方案一：全包裝備內容"><img loading="lazy" src="images/plan1-allinclusive-gear-list-thumb.jpg" alt="方案一全包裝備清單"><span>方案一・裝備內容</span></button>
-        <button type="button" data-full="images/snow-rental-shop-price-list.jpg" data-cap="SNOW RENTAL SHOP 租借價目表"><img loading="lazy" src="images/snow-rental-shop-price-list-thumb.jpg" alt="SNOW RENTAL SHOP 價目表"><span>SNOW RENTAL SHOP</span></button>
       </div>
     </details>
   </section>
@@ -1375,6 +1590,123 @@ main section.pre { transform: translateY(26px); }
   $("lbClose").addEventListener("click", () => (lb.close ? lb.close() : lb.removeAttribute("open")));
   lb.addEventListener("click", (e) => { if (e.target === lb) lb.close(); });
 
+  /* ---------- Today on the trip (Japan date) ---------- */
+  (function tripToday() {
+    const q = new URLSearchParams(location.search).get("today");
+    let t;
+    try { t = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); } catch (e) { t = new Date().toISOString().slice(0, 10); }
+    if (q && /^\d{4}-\d{2}-\d{2}$/.test(q)) t = q;
+    const days = Array.from(document.querySelectorAll(".day[data-date]"));
+    if (!days.length || t < days[0].dataset.date || t > days[days.length - 1].dataset.date) return;
+    const strip = document.querySelectorAll(".strip a");
+    let cur = null;
+    days.forEach((d, i) => {
+      if (d.dataset.date < t) d.classList.add("past");
+      if (d.dataset.date === t) { d.classList.add("today"); cur = d; if (strip[i]) strip[i].classList.add("today"); }
+    });
+    if (!cur) return;
+    const n = days.indexOf(cur) + 1, cw = $("countWrap");
+    cw.hidden = false; cw.textContent = "旅行第 " + n + " 天・今天是 " + Number(t.slice(5, 7)) + "/" + Number(t.slice(8)) + "（日本時間）";
+    if (!location.hash) setTimeout(() => cur.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" }), 700);
+  })();
+
+  /* ---------- Weather (Open-Meteo, client-side) ---------- */
+  (function weather() {
+    const WX_KEY = "yuzawa-wx-v1", MAX_AGE = 2 * 3600000;
+    const url = "https://api.open-meteo.com/v1/forecast?latitude=36.93&longitude=138.81&current=temperature_2m,weather_code&hourly=snow_depth&daily=weather_code,temperature_2m_max,temperature_2m_min,snowfall_sum&timezone=Asia%2FTokyo&forecast_days=7";
+    const code = (c) => c === 0 || c === 1 ? ["晴", "w-sun"] : c === 2 ? ["晴時多雲", "w-part"] : c === 3 ? ["陰", "w-cloud"]
+      : c === 45 || c === 48 ? ["霧", "w-fog"] : c >= 51 && c <= 57 ? ["毛毛雨", "w-rain"] : c >= 61 && c <= 67 ? ["雨", "w-rain"]
+      : c >= 71 && c <= 77 ? ["雪", "w-snow"] : c >= 80 && c <= 82 ? ["陣雨", "w-rain"] : c === 85 || c === 86 ? ["陣雪", "w-snow"]
+      : c >= 95 ? ["雷雨", "w-storm"] : ["—", "w-cloud"];
+    const DOW = "日一二三四五六";
+    const svg = (id) => { const ns = "http://www.w3.org/2000/svg", s = document.createElementNS(ns, "svg"), u = document.createElementNS(ns, "use"); s.setAttribute("aria-hidden", "true"); u.setAttribute("href", "#" + id); s.appendChild(u); return s; };
+    const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+    function draw(d, fetched, stale) {
+      const D = d.daily, list = $("wxDays"); list.textContent = "";
+      D.time.forEach((ds, i) => {
+        const [y, m, dd] = ds.split("-").map(Number), w = new Date(Date.UTC(y, m - 1, dd)).getUTCDay();
+        const [txt, ico] = code(D.weather_code[i]), sf = D.snowfall_sum[i];
+        const li = el("li", (ico === "w-snow" ? "sn" : "") + (ds >= "2027-02-11" && ds <= "2027-02-18" ? " trip" : ""));
+        const dd1 = el("span", "dd", i === 0 ? "今天" : "週" + DOW[w]); dd1.prepend(el("b", "", m + "/" + dd));
+        li.append(dd1, svg(ico), el("span", "tx", txt));
+        const tt = el("span", "tt", Math.round(D.temperature_2m_max[i]) + "°"); tt.append(el("i", "", " / " + Math.round(D.temperature_2m_min[i]) + "°"));
+        li.append(tt, el("span", "sf", sf > 0 ? "雪 " + (sf < 1 ? sf.toFixed(1) : Math.round(sf)) + " cm" : ""));
+        list.appendChild(li);
+      });
+      if (d.current) {
+        const [txt, ico] = code(d.current.weather_code);
+        $("wxNowIco").setAttribute("href", "#" + ico);
+        $("wxNowT").textContent = Math.round(d.current.temperature_2m) + "°C";
+        $("wxNowTxt").textContent = "現在 " + txt;
+        let depth = null;
+        if (d.hourly && d.hourly.snow_depth) {
+          const k = d.hourly.time.indexOf(String(d.current.time).slice(0, 13) + ":00");
+          const v = d.hourly.snow_depth[k >= 0 ? k : 0];
+          if (v != null) depth = Math.round(v * 100);
+        }
+        $("wxDepth").textContent = depth == null ? "—" : depth + " cm";
+        $("wxNow").hidden = false;
+      }
+      const f = new Date(fetched), hm = String(f.getHours()).padStart(2, "0") + ":" + String(f.getMinutes()).padStart(2, "0");
+      $("wxSub").textContent = (stale ? "暫時連不上，先顯示上次抓到的預報（" : "預報更新於 ") + (f.getMonth() + 1) + "/" + f.getDate() + " " + hm + (stale ? "）" : "") + "。雪量是當天累積降雪。";
+    }
+    const cached = store.get(WX_KEY, null);
+    if (cached && cached.data && Date.now() - cached.at < MAX_AGE) { draw(cached.data, cached.at, false); return; }
+    const ctl = "AbortController" in window ? new AbortController() : null;
+    const timer = setTimeout(() => ctl && ctl.abort(), 8000);
+    fetch(url, ctl ? { signal: ctl.signal } : {}).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }).then((d) => {
+      clearTimeout(timer);
+      if (!d || !d.daily || !d.daily.time) throw new Error("bad");
+      store.set(WX_KEY, { at: Date.now(), data: d });
+      draw(d, Date.now(), false);
+    }).catch(() => {
+      clearTimeout(timer);
+      if (cached && cached.data) { draw(cached.data, cached.at, true); return; }
+      $("wxSub").textContent = "天氣預報暫時抓不到。可以點上面岩原、神立的「雪況」連結看雪場現況。";
+    });
+  })();
+
+  /* ---------- Calendar (.ics) ---------- */
+  (function calendar() {
+    const btn = $("icsBtn"); if (!btn) return;
+    const esc = (t) => String(t).replace(/[\;,]/g, (c) => "\\" + c).replace(/\n/g, "\\n");
+    const ev = [
+      { s: "20270211T053000Z", e: "20270211T083500Z", t: "✈ JL8664 桃園 → 成田", l: "台灣桃園國際機場", d: "13:30 起飛（台灣時間），17:35 抵達成田（日本時間）。起飛前 2 小時到機場。" },
+      { s: "20270218T001000Z", e: "20270218T041500Z", t: "✈ JL8663 成田 → 桃園", l: "成田國際機場", d: "09:10 起飛（日本時間），12:15 抵達桃園（台灣時間）。07:10 前到機場。" },
+      { s: "20270211", e: "20270213", t: "🛏 淺草東橫 INN（2 晚）", l: "東横INN 浅草", all: 1 },
+      { s: "20270213", e: "20270217", t: "🛏 Angel Resort Yuzawa（4 晚）", l: "エンジェルリゾート湯沢", all: 1 },
+      { s: "20270217", e: "20270218", t: "🛏 成田機場東橫 INN（1 晚）", l: "東横INN 成田空港", all: 1 },
+      { s: "20270213", e: "20270214", t: "🚄 新幹線 東京 → 越後湯澤", l: "東京駅", all: 1 },
+      { s: "20270214", e: "20270216", t: "🏂 瘋雪單板教練課（岩原）", l: "岩原スキー場", all: 1, d: "2 人上課，全日。LINE @crazyforsnow" },
+      { s: "20270216", e: "20270218", t: "🏂 三人一起滑（神立／岩原）", l: "神立スノーリゾート", all: 1 },
+      { s: "20270217", e: "20270218", t: "🚄 越後湯澤 → 東京 → 成田（先還雪具）", l: "越後湯沢駅", all: 1 }
+    ];
+    btn.addEventListener("click", () => {
+      const now = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
+      const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//yuzawa-ski//2027//ZH", "CALSCALE:GREGORIAN", "X-WR-CALNAME:越後湯澤滑雪 2027"];
+      ev.forEach((x, i) => {
+        lines.push("BEGIN:VEVENT", "UID:yuzawa-2027-" + i + "@yuzawa-ski", "DTSTAMP:" + now,
+          x.all ? "DTSTART;VALUE=DATE:" + x.s : "DTSTART:" + x.s, x.all ? "DTEND;VALUE=DATE:" + x.e : "DTEND:" + x.e,
+          "SUMMARY:" + esc(x.t), "LOCATION:" + esc(x.l));
+        if (x.d) lines.push("DESCRIPTION:" + esc(x.d));
+        lines.push("END:VEVENT");
+      });
+      lines.push("END:VCALENDAR");
+      const blob = new Blob([lines.join("\r\n") + "\r\n"], { type: "text/calendar;charset=utf-8" });
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "yuzawa-ski-2027.ics";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    });
+  })();
+
+  /* ---------- Offline (public site only) ---------- */
+  (function offline() {
+    if (!("serviceWorker" in navigator) || !/github\.io$/.test(location.hostname)) return;
+    navigator.serviceWorker.register("sw.js").then(() => {
+      const n = $("offNote"); if (n) n.textContent = "這個網址打開過一次之後，沒網路也看得到（價格和天氣是上次抓到的）。";
+    }).catch(() => {});
+  })();
+
   /* ---------- Pricing ---------- */
   const CALC_KEY = "yuzawa-calc-v2";
   const COLORS = ["var(--c1)", "var(--c2)", "var(--c3)", "var(--c4)", "var(--c5)", "var(--c6)", "var(--c7)", "var(--c8)"];
@@ -1388,14 +1720,16 @@ main section.pre { transform: translateY(26px); }
 
     const tier = (arr, d) => (d <= 1 ? arr[0] : arr[1] + (d - 2) * arr[2]);
     const fs = rent.fullSet;
-    const baseJpy = tier(rent.adult[fs.base], days);
-    const accEach = tier(rent.adult[fs.accessoryPrice], days);
+    const A = rent.adult, acc = (k) => tier(A[k], days);
+    const baseJpy = fs.base.reduce((t, k) => t + acc(k), 0);
     const accKeys = Object.keys(fs.accessories);
     const keptAcc = accKeys.filter((k) => !(s.selfBring && fs.selfBringable.includes(k)));
-    const fullRentJpy = baseJpy + accKeys.length * accEach;
-    const rentJpy = baseJpy + keptAcc.length * accEach;
+    const accAllJpy = accKeys.reduce((t, k) => t + acc(k), 0), keptAccJpy = keptAcc.reduce((t, k) => t + acc(k), 0);
+    const fullRentJpy = baseJpy + accAllJpy;
+    const rentJpy = baseJpy + keptAccJpy;
     const rentTwd = r10(rentJpy / rate);
-    const selfSaveJpy = fs.selfBringable.length * accEach;
+    const selfSaveJpy = fs.selfBringable.reduce((t, k) => t + acc(k), 0);
+    const accEach = acc(fs.selfBringable[0]);
 
     const freeLiftJpy = lifts[s.day3] * (freeDays - 1) + lifts[s.day4];
     const freeLiftNote = name[s.day3] + " " + jpy(lifts[s.day3]) + (freeDays > 2 ? " × " + (freeDays - 1) : "") + " ＋ " + name[s.day4] + " " + jpy(lifts[s.day4]) + " ＝ " + jpy(freeLiftJpy);
@@ -1406,7 +1740,7 @@ main section.pre { transform: translateY(26px); }
     const trainJpy = trainOneWay * 2;
     const trainTwd = r10(trainJpy / rate);
     const trainNote = (s.train === "reserved" ? "指定席 " : "自由席 ") + jpy(trainOneWay) + " × 2 ＝ " + jpy(trainJpy);
-    const rentNote = "單板全套 " + jpy(baseJpy) + " ＋ " + keptAcc.map((k) => fs.accessories[k]).join("、") + " " + jpy(keptAcc.length * accEach) + " ＝ " + jpy(rentJpy) + (s.selfBring ? "（雪鏡手套自備）" : "");
+    const rentNote = "板＋鞋 " + jpy(acc("boardSet")) + "＋雪衣褲 " + jpy(acc("jacketPants")) + "＋" + keptAcc.map((k) => fs.accessories[k]).join("、") + " " + jpy(keptAccJpy) + " ＝ " + jpy(rentJpy) + (s.selfBring ? "（雪鏡手套自備）" : "");
     const liftName = "2/16–17 雪票", rentName = rent.provider + " 單板全套 " + days + " 天", trainName = "東京－越後湯澤新幹線來回";
 
     const fl = P.flight, L = P.lodging, ho = L.angelResort, ak = L.asakusa, na = L.narita;
@@ -1451,22 +1785,22 @@ main section.pre { transform: translateY(26px); }
     const p1CoachJpy = alt.pricePerPersonPerDayByClassSize[classSize] * lessonDays + lifts.iwappara * lessonDays;
     const p1RentJpy = alt.extensionRentalPerPersonPerDay * freeDays;
     const baseLiftJpy = lifts.iwappara * freeDays;
-    const p1 = { coach: r10(p1CoachJpy / rate), rent: r10(p1RentJpy / rate), rentJpy: p1RentJpy, lift: r10(baseLiftJpy / rate), liftJpy: baseLiftJpy };
-    p1.total = p1.coach + p1.rent + p1.lift;
-    const p2 = { coach: coach.bundleTwdPerPerson, rent: r10(fullRentJpy / rate), rentJpy: fullRentJpy, lift: r10(baseLiftJpy / rate), liftJpy: baseLiftJpy };
-    p2.total = p2.coach + p2.rent + p2.lift;
+    const p1 = { coach: r10(p1CoachJpy / rate), rent: r10(p1RentJpy / rate), rentJpy: p1RentJpy, lift: freeLiftTwd, liftJpy: freeLiftJpy, train: trainTwd };
+    p1.total = p1.coach + p1.rent + p1.lift + p1.train;
+    const p2 = { coach: coach.bundleTwdPerPerson, rent: r10(fullRentJpy / rate), rentJpy: fullRentJpy, lift: freeLiftTwd, liftJpy: freeLiftJpy, train: trainTwd };
+    p2.total = p2.coach + p2.rent + p2.lift + p2.train;
 
     const det = {
       coachJpy: alt.pricePerPersonPerDayByClassSize[classSize] * lessonDays,
       lessonLiftJpy, lessonLiftTwd, freeLiftJpy, freeLiftTwd, freeLiftNote, trainTwd, trainNote,
-      fullRentJpy, fullRentTwd: r10(fullRentJpy / rate), baseJpy, accEach, accCount: accKeys.length,
+      fullRentJpy, fullRentTwd: r10(fullRentJpy / rate), baseJpy, accAllJpy,
       p1ExtJpy: p1RentJpy, p1ExtTwd: r10(p1RentJpy / rate), extPerDay: alt.extensionRentalPerPersonPerDay
     };
     det.coachTwd = r10(det.coachJpy / rate);
     det.p1Learner = det.coachTwd + lessonLiftTwd + det.p1ExtTwd + freeLiftTwd + trainTwd;
     det.p2Learner = coach.bundleTwdPerPerson + det.fullRentTwd + freeLiftTwd + trainTwd;
     det.other = lessonLiftTwd + det.fullRentTwd + freeLiftTwd + trainTwd;
-    return { people, lessonPeople, others, days, lessonDays, freeDays, views, selfSaveJpy, accEach, p1, p2, alt, lifts, classSize, rent, det };
+    return { people, lessonPeople, others, days, lessonDays, freeDays, views, selfSaveJpy, accEach, p1, p2, alt, lifts, classSize, rent, det, trainNote };
   }
 
   function start(P) {
@@ -1503,10 +1837,14 @@ main section.pre { transform: translateY(26px); }
     const excl = "預算不含：" + P.budgetPerPersonTwd.excludes.join("、") + "。價格以店家公告為準。";
     $("excludes").textContent = excl; $("excludesFoot").textContent = excl;
     const lp = P.meta.lessonPeople != null ? P.meta.lessonPeople : P.meta.people;
+    const crew = $("crew"), tv = P.meta.travelers || [];
+    crew.textContent = "";
+    tv.forEach((n, i) => { if (i) { const dot = document.createElement("i"); dot.setAttribute("aria-hidden", "true"); crew.appendChild(dot); } crew.appendChild(document.createTextNode(n)); });
+    if (tv.length) crew.setAttribute("aria-label", "成員：" + tv.join("、"));
     $("viewAll").textContent = P.meta.people + " 人";
     $("passPeople").textContent = P.meta.people;
     if (lp >= P.meta.people) { $("viewFree").hidden = true; if (s.view === "free") s.view = "per"; }
-    $("p2Misc").textContent = "雪具店接駁" + P.chosenPlan.rental.shuttle.replace("待向店家確認", "待確認") + "；岩原也有越後湯澤站東口出發的免費巴士。保險自己買。同一套裝備用四天。";
+    $("p2Misc").textContent = "雪具店接駁待確認；岩原也有越後湯澤站東口出發的免費巴士。保險自己買。同一套裝備用四天。";
 
     const press = (on, off) => { on.setAttribute("aria-pressed", "true"); off.setAttribute("aria-pressed", "false"); };
     const meter = (el, parts, max) => {
@@ -1550,7 +1888,7 @@ main section.pre { transform: translateY(26px); }
         twd(d.lessonLiftTwd), "另購 " + jpy(d.lessonLiftJpy), "NT$0", "含在組合價", d.lessonLiftTwd);
       row("", "雪具 2/14–17", "單板全套",
         twd(d.p1ExtTwd), "上課 2 天含在全包；後 2 天續租 " + jpy(d.extPerDay) + " × " + r.freeDays + " ＝ " + jpy(d.p1ExtJpy),
-        twd(d.fullRentTwd), "全套 " + jpy(d.baseJpy) + " ＋ 安全帽、雪鏡、手套 " + jpy(d.accEach * d.accCount) + " ＝ " + jpy(d.fullRentJpy),
+        twd(d.fullRentTwd), "板鞋＋雪衣褲 " + jpy(d.baseJpy) + " ＋ 安全帽、雪鏡、手套 " + jpy(d.accAllJpy) + " ＝ " + jpy(d.fullRentJpy),
         d.p1ExtTwd - d.fullRentTwd);
       row("", "雪票 2/16–17", d.freeLiftNote, twd(d.freeLiftTwd), "", twd(d.freeLiftTwd), "", 0);
       row("", "新幹線來回", d.trainNote, twd(d.trainTwd), "", twd(d.trainTwd), "", 0);
@@ -1566,15 +1904,16 @@ main section.pre { transform: translateY(26px); }
     }
 
     function renderGear(r) {
-      const R = P.chosenPlan.rental, A = R.adult, fs = R.fullSet, days = r.days;
+      const R = P.chosenPlan.rental, A = R.adult, fs = R.fullSet, days = r.days, L = R.labels;
       const tier = (arr, d) => (d <= 1 ? arr[0] : arr[1] + (d - 2) * arr[2]);
-      const acc = tier(A[fs.accessoryPrice], days) * Object.keys(fs.accessories).length;
-      $("gearCap").textContent = R.provider + (R.providerNameConfirmed ? "，" : "（店名待確認），") + "2/14–17 連租 " + days + " 天。每個方案都另加安全帽、雪鏡、手套 " + jpy(acc) + "；雪鏡手套自備可再省 " + jpy(r.selfSaveJpy) + "。台幣用 1 TWD = " + s.rate + " JPY 換算。歸還時間 " + R.returnBy + " 前。";
+      const t = (keys) => keys.reduce((sum, k) => sum + tier(A[k], days), 0);
+      const accKeys = Object.keys(fs.accessories);
+      $("gearCap").textContent = R.provider + "，2/14–17 連租 " + days + " 天（2 日價＋第 3 天起每日加收），不是一天價 × " + days + "。台幣用 1 TWD = " + s.rate + " JPY 換算。歸還時間、接送和店址" + (R.returnBy === "待確認" ? "都還待確認" : "：" + R.returnBy + " 前歸還") + "。";
       const mk = (cls, label, sub, cells) => {
         const tr = document.createElement("tr"); if (cls) tr.className = cls;
-        const t = document.createElement("td"); t.className = "t"; t.textContent = label;
-        if (sub) { const sm = document.createElement("small"); sm.textContent = sub; t.appendChild(sm); }
-        tr.appendChild(t);
+        const td0 = document.createElement("td"); td0.className = "t"; td0.textContent = label;
+        if (sub) { const sm = document.createElement("small"); sm.textContent = sub; td0.appendChild(sm); }
+        tr.appendChild(td0);
         cells.forEach(([l, v, sm2]) => {
           const td = document.createElement("td"); td.className = "v"; td.dataset.l = l; td.textContent = v;
           if (sm2) { const sm = document.createElement("small"); sm.textContent = sm2; td.appendChild(sm); }
@@ -1583,58 +1922,45 @@ main section.pre { transform: translateY(26px); }
         return tr;
       };
       const kits = [
-        { key: ["snowboardFullSet"], name: "一般單板全套", sub: "板＋鞋＋雪衣褲（店家全套價）", pick: fs.base === "snowboardFullSet" },
-        { key: ["burtonSnowboardSetWithWear"], name: "Burton 2027 套組＋雪衣褲", sub: "新款 Burton 板＋鞋＋雪衣褲" },
-        { key: ["premiumSnowboardSetWithWear"], name: "高階自選套組＋雪衣褲", sub: "自選板＋鞋＋雪衣褲" },
-        { key: ["snowboardSet", "jacketPants"], name: "一般套組＋雪衣全套分開租", sub: "比直接租全套貴" },
-        { key: ["snowboardSet"], name: "只租板＋鞋", sub: "雪衣褲自備" }
+        { keys: fs.base.concat(accKeys), name: "分開租：板鞋＋雪衣褲＋安全帽、雪鏡、手套", sub: "預算用這個", pick: true },
+        { keys: ["fullSet"], name: "店家全套方案", sub: "套裝價，多含護臀" },
+        { keys: fs.base.concat(accKeys.filter((k) => !fs.selfBringable.includes(k))), name: "雪鏡、手套自備", sub: "只租板鞋、雪衣褲、安全帽" },
+        { keys: ["boardSet"].concat(accKeys), name: "雪衣褲自備", sub: "只租板鞋和三樣配件" }
       ];
       const kb = $("gearKits"); kb.textContent = "";
       kits.forEach((k) => {
-        const base = k.key.reduce((sum, key) => sum + tier(A[key], days), 0);
-        const tot = base + acc;
+        const tot = t(k.keys);
         kb.appendChild(mk(k.pick ? "pick" : "", k.name, k.sub, [
-          ["4 天每人", jpy(tot), "本體 " + jpy(base) + " ＋ 配件 " + jpy(acc)],
+          ["4 天每人", jpy(tot)],
           ["約台幣", twd(r10(tot / s.rate))],
           [r.people + " 人", jpy(tot * r.people), "約 " + twd(r10(tot * r.people / s.rate))]
         ]));
       });
-      const items = [
-        ["snowboardSet", "單板套組", "板＋鞋"], ["snowboardFullSet", "單板全套", "板＋鞋＋雪衣褲"],
-        ["board", "雪板"], ["boots", "雪鞋"], ["jacketPants", "雪衣全套", "上衣＋褲子"], ["jacketOrPants", "雪衣上身或下身"],
-        ["helmetOrGogglesOrGloves", "安全帽／雪鏡／手套", "每樣分開算"], ["polesOrSnowBootsOrBeanie", "雪杖／雪靴／毛帽", "每樣分開算"],
-        ["burtonSnowboardSet", "Burton 2027 套組", "板＋鞋"], ["burtonSnowboardSetWithWear", "Burton 2027 套組＋雪衣褲"], ["burtonBoard", "Burton 2027 雪板"],
-        ["premiumSnowboardSet", "高階自選套組", "板＋鞋"], ["premiumSnowboardSetWithWear", "高階自選套組＋雪衣褲"], ["premiumBoard", "高階自選雪板"]
-      ];
       const ib = $("gearItems"); ib.textContent = "";
-      items.forEach(([key, label, sub]) => {
+      Object.keys(L).forEach((key) => {
         const arr = A[key]; if (!arr) return;
-        ib.appendChild(mk("", label, sub, [["1 日", jpy(arr[0])], ["2 日", jpy(arr[1])], ["續借 1 日", jpy(arr[2])], [days + " 天", jpy(tier(arr, days))]]));
+        ib.appendChild(mk("", L[key], "", [["1 日", jpy(arr[0])], ["2 日", jpy(arr[1])], ["第 3 天起每日", jpy(arr[2])], [days + " 天", jpy(tier(arr, days))]]));
       });
     }
 
     function renderShopCmp(r) {
-      const B = P.chosenPlan.rental.adult, S = P.snowRentalShop.adult, d = r.days;
-      const bn = P.chosenPlan.rental.provider, sn = "SNOW RENTAL SHOP";
+      const S = P.chosenPlan.rental.adult, B = P.booSports.adult, d = r.days;
+      const sn = P.chosenPlan.rental.provider, bn = P.booSports.provider;
       const tier = (arr, n) => (n <= 1 ? arr[0] : arr[1] + (n - 2) * arr[2]);
-      const so = (o) => [o["1day"], o["2days"], o.extraDay];
       const fullB = tier(B.snowboardFullSet, d) + 3 * tier(B.helmetOrGogglesOrGloves, d);
-      const fullS = tier(so(S.boardSet), d) + ["jacketPants", "helmet", "goggles", "gloves"].reduce((t, k) => t + tier(S.items[k], d), 0);
+      const fullS = ["boardSet", "jacketPants", "helmet", "goggles", "gloves"].reduce((t, k) => t + tier(S[k], d), 0);
       const rows = [
-        ["板＋鞋套組", "", B.snowboardSet, so(S.boardSet)],
-        ["只租雪板", "", B.board, S.items.boardWithPoles],
-        ["只租雪鞋", "", B.boots, S.items.boots],
-        ["雪衣＋雪褲", "", B.jacketPants, S.items.jacketPants],
-        ["雪衣或雪褲單件", "", B.jacketOrPants, null],
-        ["安全帽", "", B.helmetOrGogglesOrGloves, S.items.helmet],
-        ["雪鏡", "", B.helmetOrGogglesOrGloves, S.items.goggles],
-        ["手套", "", B.helmetOrGogglesOrGloves, S.items.gloves],
-        ["護臀", "", null, S.items.padShorts]
-      ].map(([l, sub, b, x]) => ({ l, sub, b: b ? tier(b, d) : null, x: x ? tier(x, d) : null }));
-      const snowWins = rows.filter((o) => o.b != null && o.x != null && o.x < o.b).map((o) => "「" + o.l + "」");
-      rows.push({ l: "全套", sub: "板＋鞋＋雪衣褲＋安全帽、雪鏡、手套", b: fullB, x: fullS, cls: "pick" });
-      rows.push({ l: r.people + " 人全套", sub: "", b: fullB * r.people, x: fullS * r.people });
-      rows.push({ l: sn + " 全套方案", sub: "店家套裝價，多含護臀", b: null, x: tier(so(S.fullSet), d), only: true });
+        ["板＋鞋套組", S.boardSet, B.snowboardSet],
+        ["只租雪板", S.boardWithPoles, B.board],
+        ["只租雪鞋", S.boots, B.boots],
+        ["雪衣＋雪褲", S.jacketPants, B.jacketPants],
+        ["安全帽", S.helmet, B.helmetOrGogglesOrGloves],
+        ["雪鏡", S.goggles, B.helmetOrGogglesOrGloves],
+        ["手套", S.gloves, B.helmetOrGogglesOrGloves],
+        ["護臀", S.padShorts, null]
+      ].map(([l, x, b]) => ({ l, x: x ? tier(x, d) : null, b: b ? tier(b, d) : null }));
+      rows.push({ l: "全套", sub: "板＋鞋＋雪衣褲＋安全帽、雪鏡、手套", x: fullS, b: fullB, cls: "pick" });
+      rows.push({ l: r.people + " 人全套", x: fullS * r.people, b: fullB * r.people });
       const cell = (y, none) => {
         const td = document.createElement("td"); td.className = "v";
         if (y == null) { td.textContent = none; td.classList.add("same"); return td; }
@@ -1643,22 +1969,18 @@ main section.pre { transform: translateY(26px); }
       const tb = $("shopRows"); tb.textContent = "";
       rows.forEach((o) => {
         const tr = document.createElement("tr"); if (o.cls) tr.className = o.cls;
-        const t = document.createElement("td"); t.className = "t"; t.textContent = o.l;
-        if (o.sub) { const sm = document.createElement("small"); sm.textContent = o.sub; t.appendChild(sm); }
-        const cb = cell(o.b, o.only ? "—" : "沒有"), cx = cell(o.x, "沒有單件");
-        cb.dataset.l = bn; cx.dataset.l = sn;
-        const w = document.createElement("td"); w.className = "v"; w.dataset.l = "哪家便宜";
-        if (o.only) { w.textContent = "—"; w.classList.add("same"); }
-        else if (o.b == null) w.textContent = "只有 " + sn;
-        else if (o.x == null) w.textContent = "只有 " + bn;
-        else if (o.b === o.x) { w.textContent = "一樣"; w.classList.add("same"); }
-        else { w.textContent = (o.b < o.x ? bn : sn) + " 少 " + jpy(Math.abs(o.x - o.b)); w.classList.add("win"); }
-        tr.append(t, cb, cx, w); tb.appendChild(tr);
+        const td0 = document.createElement("td"); td0.className = "t"; td0.textContent = o.l;
+        if (o.sub) { const sm = document.createElement("small"); sm.textContent = o.sub; td0.appendChild(sm); }
+        const cx = cell(o.x, "沒有單件"), cb = cell(o.b, "沒有");
+        cx.dataset.l = sn; cb.dataset.l = bn;
+        const w = document.createElement("td"); w.className = "v"; w.dataset.l = "差額";
+        if (o.b == null) w.textContent = "只有 " + sn;
+        else if (o.x === o.b) { w.textContent = "一樣"; w.classList.add("same"); }
+        else w.textContent = (o.x > o.b ? "貴 " : "便宜 ") + jpy(Math.abs(o.x - o.b));
+        tr.append(td0, cx, cb, w); tb.appendChild(tr);
       });
-      $("shopCap").textContent = "只比 " + bn + " 和 " + sn + "。兩家都用連租價算 " + d + " 天（2 日價＋續借每日），不是一天價 × " + d + "。"
-        + "結論：全套 " + (fullB <= fullS ? bn + " 每人少 " + jpy(fullS - fullB) + "（" + r.people + " 人少 " + jpy((fullS - fullB) * r.people) + "），方案二用 " + bn : sn + " 每人少 " + jpy(fullB - fullS))
-        + (snowWins.length ? "；單項只有" + snowWins.join("、") + "是 " + sn + " 便宜。" : "。")
-        + bn + " 沒有護臀。台幣用 1 TWD = " + s.rate + " JPY 換算。";
+      const diff = fullS - fullB;
+      $("shopCap").textContent = "兩家都用連租價算 " + d + " 天。全套每人 " + sn + " 比 " + bn + (diff >= 0 ? " 貴 " : " 便宜 ") + jpy(Math.abs(diff)) + "（約 " + twd(r10(Math.abs(diff) / s.rate)) + "），" + r.people + " 人共 " + jpy(Math.abs(diff) * r.people) + "。最後選 " + sn + "。";
     }
 
     let started = false;
@@ -1717,19 +2039,19 @@ main section.pre { transform: translateY(26px); }
       const max = Math.max(r.p1.total, r.p2.total);
       $("p1Total").innerHTML = '<span class="cur">NT$</span>' + fmt(r.p1.total);
       $("p2Total").innerHTML = '<span class="cur">NT$</span>' + fmt(r.p2.total);
-      meter($("p1Meter"), [r.p1.coach, r.p1.rent, r.p1.lift], max);
-      meter($("p2Meter"), [r.p2.coach, r.p2.rent, r.p2.lift], max);
+      meter($("p1Meter"), [r.p1.coach, r.p1.rent, r.p1.lift, r.p1.train], max);
+      meter($("p2Meter"), [r.p2.coach, r.p2.rent, r.p2.lift, r.p2.train], max);
+      $("p1Train").textContent = r.trainNote + " ≈ " + twd(r.p1.train);
+      $("p2Train").textContent = r.trainNote + " ≈ " + twd(r.p2.train);
       $("p1Coach").textContent = jpy(a.pricePerPersonPerDayByClassSize[r.classSize] * r.lessonDays) + "＋雪票 " + jpy(r.lifts.iwappara * r.lessonDays) + " ≈ " + twd(r.p1.coach);
       $("p1Rental").textContent = "包套續租 " + r.freeDays + " 天 " + jpy(r.p1.rentJpy) + " ≈ " + twd(r.p1.rent);
       $("p1Lift").textContent = jpy(r.p1.liftJpy) + " ≈ " + twd(r.p1.lift);
       $("p2Coach").textContent = twd(r.p2.coach) + "（待確認）";
       $("p2Rental").textContent = r.rent.provider + " " + r.days + " 天 " + jpy(r.p2.rentJpy) + " ≈ " + twd(r.p2.rent);
       $("cmpRentJpy").textContent = jpy(r.p2.rentJpy) + "（約 " + twd(r.p2.rent) + "）";
-      const SR = P.snowRentalShop.adult, srTier = (arr, d) => (d <= 1 ? arr[0] : arr[1] + (d - 2) * arr[2]);
-      const srJpy = srTier([SR.boardSet["1day"], SR.boardSet["2days"], SR.boardSet.extraDay], r.days)
-        + ["jacketPants", "helmet", "goggles", "gloves"].reduce((t, k) => t + srTier(SR.items[k], r.days), 0);
-      const srTwd = r10(srJpy / s.rate);
-      $("oldRentCmp").textContent = "比 SNOW RENTAL SHOP 同樣品項 " + jpy(srJpy) + "（約 " + twd(srTwd) + "）" + (r.p2.rentJpy <= srJpy ? "便宜 " + jpy(srJpy - r.p2.rentJpy) : "貴 " + jpy(r.p2.rentJpy - srJpy)) + "。";
+      const BA = P.booSports.adult, bt = (arr) => (r.days <= 1 ? arr[0] : arr[1] + (r.days - 2) * arr[2]);
+      const booJpy = bt(BA.snowboardFullSet) + 3 * bt(BA.helmetOrGogglesOrGloves);
+      $("oldRentCmp").textContent = "比 " + P.booSports.provider + " 同樣品項 " + jpy(booJpy) + "（約 " + twd(r10(booJpy / s.rate)) + "）貴 " + jpy(r.p2.rentJpy - booJpy) + "，";
       $("p2Lift").textContent = jpy(r.p2.liftJpy) + " ≈ " + twd(r.p2.lift);
       const save = r.p1.total - r.p2.total;
       tween($("saveTwd"), r100(save), fmt);
