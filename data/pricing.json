@@ -159,13 +159,14 @@
         ]
       },
       "returnBy": "待確認",
-      "shuttle": "待確認（預約時問清楚能不能接送到岩原、神立和 Angel Resort Yuzawa）",
-      "location": "待確認",
+      "shuttle": "每天都有接駁",
+      "location": "Angel Resort Yuzawa 旁邊",
       "notes": [
         "使用者 2026-11-14 決定改選這家：同樣品項每人比 Boo Sports 貴約 ¥9,200",
         "方案一（全包教練）合作的也是這家"
       ],
-      "priceList": "images/snow-rental-shop-price-list.jpg"
+      "priceList": "images/snow-rental-shop-price-list.jpg",
+      "confirmedNote": "接駁和位置是使用者 2026-11-14 確認"
     }
   },
   "alternativePlan": {
